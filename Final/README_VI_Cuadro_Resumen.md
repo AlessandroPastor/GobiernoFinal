@@ -280,5 +280,192 @@ DF3 (riesgo) y DF5 (amenazas), que amplifican APO12 más que la Cascada.
 
 ---
 
+---
+
+## Glosario de abreviaciones
+
+### Marco de referencia y organización
+
+| Abreviación | Significado completo | Contexto de uso |
+|---|---|---|
+| **COBIT** | Control Objectives for Information and Related Technologies | Marco de gobierno y gestión de TI publicado por ISACA. La versión usada en este proyecto es COBIT 2019. |
+| **ISACA** | Information Systems Audit and Control Association | Organización internacional que publica y mantiene el marco COBIT y certifica profesionales de gobierno TI. |
+| **EGIT** | Enterprise Governance of Information and Technology | Sistema formal de Gobierno Empresarial de TI que se diseña con COBIT. Es el producto final del proyecto. |
+| **BCRP** | Banco Central de Reserva del Perú | Institución pública autónoma, regulada por el Art. 84° de la Constitución Política del Perú. Caso de estudio del proyecto. |
+| **GTI** | Gerencia de Tecnologías de Información | Área interna del BCRP responsable de toda la infraestructura y servicios tecnológicos. Equivale al área de TI. |
+| **UPeU** | Universidad Peruana Unión | Institución académica donde se desarrolló el proyecto. |
+| **PETI** | Plan Estratégico de Tecnologías de Información | Documento oficial del BCRP (período 2022–2026) que define la hoja de ruta TI, diagnóstico de brechas y proyectos. |
+| **GRC** | Governance, Risk and Compliance | Sistema integrado de Gobierno, Riesgo y Cumplimiento. Herramienta recomendada para APO12 y MEA03. |
+
+---
+
+### Dominios y procesos COBIT 2019
+
+COBIT 2019 organiza los 40 procesos en 5 dominios. Los dos primeros son de **gobierno** y los tres últimos de **gestión**.
+
+| Abreviación | Significado | Tipo | Procesos |
+|---|---|---|:---:|
+| **EDM** | Evaluate, Direct and Monitor (Evaluar, Dirigir y Monitorear) | Gobierno | EDM01 a EDM05 |
+| **APO** | Align, Plan and Organize (Alinear, Planificar y Organizar) | Gestión | APO01 a APO14 |
+| **BAI** | Build, Acquire and Implement (Construir, Adquirir e Implementar) | Gestión | BAI01 a BAI11 |
+| **DSS** | Deliver, Service and Support (Entregar, Dar Servicio y Soporte) | Gestión | DSS01 a DSS06 |
+| **MEA** | Monitor, Evaluate and Assess (Monitorear, Evaluar y Valorar) | Gestión | MEA01 a MEA04 |
+
+#### Los 6 procesos priorizados para el BCRP
+
+| Código | Nombre completo | Dominio |
+|---|---|---|
+| **APO12** | Gestionar el Riesgo | APO |
+| **APO13** | Gestionar la Seguridad de la Información | APO |
+| **DSS04** | Gestionar la Continuidad | DSS |
+| **DSS05** | Gestionar los Servicios de Seguridad | DSS |
+| **EDM03** | Asegurar la Optimización del Riesgo | EDM |
+| **MEA03** | Gestionar el Cumplimiento de Requisitos Externos | MEA |
+
+#### Proceso adicional incluido
+
+| Código | Nombre completo | Razón de inclusión |
+|---|---|---|
+| **MEA01** | Gestionar el Rendimiento y la Conformidad | Ajuste manual: sin KPIs formales ningún proceso puede demostrar mejora al Directorio |
+
+---
+
+### Factores de diseño (hojas DF del Kit ISACA)
+
+| Abreviación | Significado | Qué representa |
+|---|---|---|
+| **DF1** | Design Factor 1 — Enterprise Strategy | Estrategia empresarial del BCRP (escala 1–5 por arquetipo) |
+| **DF2** | Design Factor 2 — Enterprise Goals | Metas empresariales COBIT (EG01–EG13), derivadas de la 1ra Cascada |
+| **DF3** | Design Factor 3 — Risk Profile | Perfil de riesgo TI (impacto × probabilidad por categoría) |
+| **DF4** | Design Factor 4 — IT-Related Issues | Problemas TI actuales del BCRP (0=no existe, 3=grave) |
+| **DF5** | Design Factor 5 — Threat Landscape | Panorama de amenazas externas (distribución % por nivel) |
+| **DF6** | Design Factor 6 — Compliance Requirements | Exigencia normativa aplicable (% por nivel de rigor) |
+| **DF7** | Design Factor 7 — Role of IT | Rol de TI en el BCRP según la grilla de McFarlan (escala 1–5) |
+| **DF8** | Design Factor 8 — Sourcing Model | Modelo de abastecimiento TI (% entre insourcing/cloud/outsourcing) |
+| **DF9** | Design Factor 9 — IT Implementation Methods | Metodologías de implementación de proyectos TI (% por tipo) |
+| **DF10** | Design Factor 10 — Technology Adoption Strategy | Postura de adopción tecnológica (% seguidor/precursor/rezagado) |
+| **DF11** | Design Factor 11 — Enterprise Size | Tamaño de la organización (Pequeña / Mediana / Grande) |
+
+> **Nota:** El proyecto menciona 11 factores porque COBIT 2019 Design Guide incluye DF11 (tamaño) como factor adicional al kit base de 10 factores.
+
+---
+
+### Metas del Modelo en Cascada
+
+#### Metas Corporativas (EG — Enterprise Goals)
+Las 13 metas corporativas de COBIT 2019 que conectan los objetivos del negocio con TI.
+
+| Código | Nombre |
+|---|---|
+| EG01 | Valor del portafolio de inversiones en negocio y servicios TI |
+| EG02 | Riesgos relacionados con el negocio gestionados |
+| EG03 | Cumplimiento de leyes y regulaciones externas |
+| EG04 | Calidad de información financiera |
+| EG05 | Orientación al cliente |
+| EG06 | Continuidad y disponibilidad de servicios de negocio |
+| EG07 | Decisiones de negocio basadas en información de calidad |
+| EG08 | Optimización de la funcionalidad de procesos internos |
+| EG09 | Optimización de los costos de los procesos de negocio |
+| EG10 | Habilidades, motivación y productividad del personal |
+| EG11 | Cumplimiento con políticas internas |
+| EG12 | Transformación digital del negocio |
+| EG13 | Innovación de productos y servicios de negocio |
+
+*Priorizadas para el BCRP (puntaje ≥ 6 en 1ra Cascada):* **EG08, EG06, EG12, EG02, EG07, EG11**
+
+#### Metas de Alineación TI (AG — Alignment Goals)
+Las 13 metas que traducen las metas corporativas en objetivos de TI.
+
+| Código | Nombre |
+|---|---|
+| AG01 | Alineación de la estrategia de TI con la estrategia de negocio |
+| AG02 | Riesgos relacionados con TI gestionados |
+| AG03 | Realización de beneficios del portafolio de programas e inversiones TI |
+| AG04 | Calidad de la información gestionada |
+| AG05 | Entrega de servicios TI alineada con los requisitos del negocio |
+| AG06 | Agilidad para convertir los requisitos de negocio en soluciones TI eficaces |
+| AG07 | Seguridad de la información, infraestructura de procesamiento y aplicaciones |
+| AG08 | Integración y estandarización de procesos de negocio y aplicaciones TI |
+| AG09 | Entrega de programas de TI en tiempo, dentro del presupuesto y con calidad requerida |
+| AG10 | Competencias e innovación del personal de TI |
+| AG11 | Cumplimiento de políticas internas de TI |
+| AG12 | Personal de TI competente y motivado |
+| AG13 | Conocimiento, experiencia e iniciativas en innovación de TI |
+
+*Priorizadas para el BCRP (puntaje ≥ 9 en 2da Cascada):* **AG07, AG08, AG05, AG06, AG09, AG11**
+
+---
+
+### Sistemas y tecnologías del BCRP
+
+| Abreviación | Significado | Rol en el BCRP |
+|---|---|---|
+| **LBTR** | Sistema de Liquidación Bruta en Tiempo Real | Procesa las transferencias interbancarias de alto valor en el Perú. Opera 24/7. Es el sistema más crítico del BCRP. |
+| **SIMC** | Sistema de Mensajería Interbancaria y Compensación | Gestiona la compensación de pagos de menor valor entre entidades financieras. |
+| **SWIFT** | Society for Worldwide Interbank Financial Telecommunication | Red internacional de mensajería financiera que conecta al BCRP con el sistema financiero global y la gestión de reservas internacionales. |
+| **HSM** | Hardware Security Module (Módulo de Seguridad Hardware) | Dispositivo físico que protege las claves criptográficas del LBTR y SWIFT. Identificado como brecha activa en el PETI. |
+| **SIEM** | Security Information and Event Management | Sistema de detección y respuesta a incidentes de seguridad en tiempo real. Identificado como brecha activa en el PETI. |
+| **MDM** | Mobile Device Management | Plataforma de gestión y control de dispositivos móviles corporativos. Brecha del PETI. |
+| **VPN** | Virtual Private Network (Red Privada Virtual) | Conexión cifrada para acceso remoto seguro. |
+| **CBDC** | Central Bank Digital Currency (Moneda Digital del Banco Central) | Proyecto en evaluación en el BCRP para emitir una versión digital del Sol peruano. |
+| **DC** | Data Center (Centro de Datos) | Instalación física que aloja los servidores y sistemas del BCRP. Actualmente tiene 2 DCs; el tercer DC es objetivo urgente del PETI. |
+| **BCP** | Business Continuity Plan (Plan de Continuidad del Negocio) | Documento y procedimientos para mantener operaciones durante una crisis. Relacionado con DSS04. |
+| **RTO** | Recovery Time Objective (Objetivo de Tiempo de Recuperación) | Tiempo máximo aceptable para restaurar un servicio tras un incidente. Meta BCRP: ≤ 4 horas. |
+| **RPO** | Recovery Point Objective (Objetivo de Punto de Recuperación) | Máxima pérdida de datos tolerable. Complemento del RTO. |
+| **IA** | Inteligencia Artificial | Tecnología mencionada en el PETI para analítica de política monetaria, datamarts y big data. |
+
+---
+
+### Estándares y marcos normativos
+
+| Abreviación | Significado | Relación con el BCRP |
+|---|---|---|
+| **ISO 27001** | International Organization for Standardization — Norma 27001 (Sistema de Gestión de Seguridad de la Información) | Meta del PETI 2022-2026. Aún no obtenida. Su ausencia es una brecha clasificada como GRAVE en DF4. Amplifica APO13 y MEA03. |
+| **ISO 20022** | Estándar internacional de mensajería financiera | Estándar adoptado por SWIFT para reemplazar el formato MT. El BCRP está en proceso de migración. |
+| **SWIFT CSP** | SWIFT Customer Security Programme | Programa de seguridad obligatorio para todos los usuarios de la red SWIFT. Auditorías anuales. Su incumplimiento implica desconexión de pagos internacionales. |
+| **BIS** | Bank for International Settlements (Banco de Pagos Internacionales) | Organismo internacional que emite estándares de gobierno TI y operacional para bancos centrales. El BCRP debe adherirse a sus principios. |
+| **RACI** | Responsible, Accountable, Consulted, Informed | Matriz que define quién es Responsable (R), quién Rinde cuentas (A), quién debe ser Consultado (C) e Informado (I) en cada subproceso. |
+| **UAT** | User Acceptance Testing (Pruebas de Aceptación de Usuario) | Fase de validación formal antes de desplegar cambios en sistemas críticos como el LBTR. Justifica el 75% de método Tradicional en DF9. |
+| **APT** | Advanced Persistent Threat | Tipo de ciberataque sofisticado y prolongado, típicamente ejecutado por actores patrocinados por estados. El BCRP es objetivo directo. |
+
+---
+
+### Herramientas del modelo en cascada
+
+| Abreviación | Significado | Qué es |
+|---|---|---|
+| **OE** | Objetivo Estratégico | Los 14 objetivos del Plan Estratégico BCRP 2022-2026 (OE1–OE14). El proyecto usó 5 de ellos: OE4, OE10, OE14, OE1/OE5, OE9. |
+| **EG** | Enterprise Goal (Meta Corporativa COBIT) | Las 13 metas corporativas del marco COBIT 2019 (EG01–EG13). Primera capa de la cascada. |
+| **AG** | Alignment Goal (Meta de Alineación TI) | Las 13 metas de alineación TI del marco COBIT 2019 (AG01–AG13). Segunda capa de la cascada. |
+| **GMO** | Governance and Management Objective | Los 40 procesos u objetivos de gobierno y gestión de COBIT 2019. Tercera capa de la cascada y resultado del Canvas. |
+
+---
+
+### Niveles de madurez COBIT 2019
+
+| Nivel | Nombre | Descripción |
+|:---:|---|---|
+| **0** | Incompleto | El proceso no existe o no alcanza su propósito. |
+| **1** | Inicial | El proceso existe pero de forma reactiva y desorganizada. Sin control formal. |
+| **2** | Gestionado | El proceso está planificado y monitoreado. Existe documentación básica. Estado actual del BCRP. |
+| **3** | Definido | El proceso está estandarizado a nivel institucional. Los procedimientos son formales. Meta alcanzable en el corto plazo. |
+| **4** | Cuantitativamente Gestionado | El proceso se mide con KPIs. Permite gestión predictiva. **Meta final para los 6 procesos centrales.** |
+| **5** | En Optimización | Mejora continua sistemática. Benchmarking externo constante. |
+
+---
+
+### Personas y roles
+
+| Abreviación | Significado | Rol en el EGIT del BCRP |
+|---|---|---|
+| **CIO** | Chief Information Officer | Máximo responsable de TI en el BCRP. Lidera la GTI. Rinde cuentas al Directorio sobre el EGIT. |
+| **CISO** | Chief Information Security Officer | Responsable de seguridad de la información. Rol identificado como necesario para APO13 y DSS05. |
+| **CSIRT** | Computer Security Incident Response Team | Equipo de respuesta ante incidentes de ciberseguridad. Necesario para DSS05. |
+| **CERT** | Computer Emergency Response Team | Similar al CSIRT; en algunos países es el término oficial para el equipo nacional de respuesta. |
+| **CGEIT** | Certified in the Governance of Enterprise IT | Certificación ISACA para profesionales de gobierno TI. Perfil recomendado para el Comité de Gobierno TI del BCRP. |
+| **GOMEF** | Gerencia de Operaciones Monetarias y Estabilidad Financiera | Gerencia misional del BCRP que opera el LBTR y el SIMC. Cliente principal de la GTI. |
+
+---
+
 *Proyecto COBIT 2019 aplicado al BCRP — Universidad Peruana Unión, IX Ciclo, 2025*  
 *Docente: Ing. Rick Armando Ccapa Luque*
