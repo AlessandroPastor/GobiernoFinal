@@ -1,0 +1,326 @@
+/* =============================================
+   ANIMATIONS.CSS — Sistema de animaciones
+   Proyecto BCRP · COBIT 2019
+   ============================================= */
+
+/* =============================================
+   1. KEYFRAMES
+   ============================================= */
+
+/* Flotación del scroll cue */
+@keyframes cue-float {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: .6; }
+  50%       { transform: translateX(-50%) translateY(8px); opacity: 1; }
+}
+
+@keyframes cue-grow {
+  0%, 100% { opacity: .4; }
+  50%       { opacity: 1; }
+}
+
+/* Fade in básico */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Fade up */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade down */
+@keyframes fade-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide desde la izquierda */
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide desde la derecha */
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Escala */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Línea animada (barra de progreso) */
+@keyframes grow-width {
+  from { width: 0; }
+}
+
+/* Pulso sutil */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,168,75,0); }
+  50%       { box-shadow: 0 0 0 6px rgba(200,168,75,.15); }
+}
+
+/* Línea que aparece */
+@keyframes line-draw {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+
+/* Contador */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Blink cursor (texto) */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Reveal de texto */
+@keyframes text-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+/* Gradient shift en hero */
+@keyframes gradient-drift {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* =============================================
+   2. CLASES DE ANIMACIÓN DIRECTA
+   ============================================= */
+
+.animate-fade-in   { animation: fade-in   .6s ease both; }
+.animate-fade-up   { animation: fade-up   .7s ease both; }
+.animate-fade-down { animation: fade-down .6s ease both; }
+.animate-slide-left  { animation: slide-in-left  .7s ease both; }
+.animate-slide-right { animation: slide-in-right .7s ease both; }
+.animate-scale-in  { animation: scale-in  .6s cubic-bezier(.34,1.56,.64,1) both; }
+
+/* Delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+.delay-900 { animation-delay: 900ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* =============================================
+   3. SCROLL-REVEAL (activadas por JS via IntersectionObserver)
+   ============================================= */
+
+/* Estado inicial — invisible, antes de entrar en viewport */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s cubic-bezier(.4,0,.2,1),
+              transform .7s cubic-bezier(.4,0,.2,1);
+}
+
+.reveal.reveal-left {
+  transform: translateX(-24px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(24px);
+}
+
+.reveal.reveal-scale {
+  transform: scale(.96) translateY(12px);
+}
+
+/* Estado activo — visible */
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger en grupos */
+.stagger-group .reveal:nth-child(1) { transition-delay: 0ms; }
+.stagger-group .reveal:nth-child(2) { transition-delay: 80ms; }
+.stagger-group .reveal:nth-child(3) { transition-delay: 160ms; }
+.stagger-group .reveal:nth-child(4) { transition-delay: 240ms; }
+.stagger-group .reveal:nth-child(5) { transition-delay: 320ms; }
+.stagger-group .reveal:nth-child(6) { transition-delay: 400ms; }
+.stagger-group .reveal:nth-child(7) { transition-delay: 480ms; }
+.stagger-group .reveal:nth-child(8) { transition-delay: 560ms; }
+.stagger-group .reveal:nth-child(9) { transition-delay: 640ms; }
+.stagger-group .reveal:nth-child(10) { transition-delay: 720ms; }
+.stagger-group .reveal:nth-child(11) { transition-delay: 800ms; }
+
+/* =============================================
+   4. PROGRESS BARS — Animadas
+   ============================================= */
+
+/* Las barras empiezan en width:0 y son animadas por JS */
+[data-width] {
+  width: 0 !important;
+  transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+[data-width].animated {
+  width: var(--target-width) !important;
+}
+
+/* =============================================
+   5. HERO DECORATIVO
+   ============================================= */
+
+.hero-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: gradient-drift 20s linear infinite;
+}
+
+.hero-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -150px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(200,168,75,.04) 0%, transparent 70%);
+}
+
+.hero-orb-2 {
+  width: 300px;
+  height: 300px;
+  bottom: 50px;
+  right: 200px;
+  background: radial-gradient(circle, rgba(44,74,110,.08) 0%, transparent 70%);
+  animation-delay: -10s;
+  animation-direction: reverse;
+}
+
+/* =============================================
+   6. LÍNEAS DECORATIVAS
+   ============================================= */
+
+.deco-line-h {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+  margin: var(--space-8) 0;
+}
+
+.deco-line-h.gold {
+  background: linear-gradient(90deg, transparent, var(--gold-300), transparent);
+}
+
+/* =============================================
+   7. SIDEBAR HOVER INDICATOR
+   ============================================= */
+
+.sidebar-nav-item::after {
+  content: '';
+  position: absolute;
+  right: var(--space-5);
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  transition: transform var(--transition-fast);
+}
+
+.sidebar-nav-item.active::after {
+  transform: translateY(-50%) scale(1);
+}
+
+/* =============================================
+   8. LOADING SKELETON (para cuando las barras cargan)
+   ============================================= */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--gray-100) 25%,
+    var(--gray-200) 50%,
+    var(--gray-100) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* =============================================
+   9. FOCUS STYLES (accesibilidad)
+   ============================================= */
+
+:focus-visible {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* =============================================
+   10. TRANSICIONES DE PÁGINA
+   ============================================= */
+
+.page-transition {
+  animation: fade-in .4s ease both;
+}
+
+/* Overlay de cierre del menú móvil */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.sidebar-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 Factores de Diseño en Detalle · BCRP · COBIT 2019</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<header class="mobile-header">
+  <span class="mobile-logo">Factores de Diseño</span>
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress-bar"></div>
+</div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar" aria-label="Navegación">
+  <div class="sidebar-brand">
+    <span class="sidebar-brand-label">COBIT® 2019</span>
+    <div class="sidebar-brand-title">11 Factores</div>
+    <div class="sidebar-brand-sub">Evidencia por factor · BCRP</div>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="sidebar-nav-group">
+      <span class="sidebar-nav-group-label">Factores</span>
+    </div>
+    <a href="#df1"  class="sidebar-nav-item" data-section="df1"><span class="sidebar-nav-num">DF1</span> Estrategia</a>
+    <a href="#df2"  class="sidebar-nav-item" data-section="df2"><span class="sidebar-nav-num">DF2</span> Metas Empresariales</a>
+    <a href="#df3"  class="sidebar-nav-item" data-section="df3"><span class="sidebar-nav-num">DF3</span> Perfil de Riesgo</a>
+    <a href="#df4"  class="sidebar-nav-item" data-section="df4"><span class="sidebar-nav-num">DF4</span> Problemas TI</a>
+    <a href="#df5"  class="sidebar-nav-item" data-section="df5"><span class="sidebar-nav-num">DF5</span> Amenazas</a>
+    <a href="#df6"  class="sidebar-nav-item" data-section="df6"><span class="sidebar-nav-num">DF6</span> Cumplimiento</a>
+    <a href="#df7"  class="sidebar-nav-item" data-section="df7"><span class="sidebar-nav-num">DF7</span> Rol de TI</a>
+    <a href="#df8"  class="sidebar-nav-item" data-section="df8"><span class="sidebar-nav-num">DF8</span> Abastecimiento</a>
+    <a href="#df9"  class="sidebar-nav-item" data-section="df9"><span class="sidebar-nav-num">DF9</span> Implementación</a>
+    <a href="#df10" class="sidebar-nav-item" data-section="df10"><span class="sidebar-nav-num">DF10</span> Adopción</a>
+    <a href="#df11" class="sidebar-nav-item" data-section="df11"><span class="sidebar-nav-num">DF11</span> Tamaño</a>
+    <div class="sidebar-nav-group" style="margin-top:16px;">
+      <span class="sidebar-nav-group-label">Navegación</span>
+    </div>
+    <a href="index.html"  class="sidebar-nav-item"><span class="sidebar-nav-num">←</span> Inicio</a>
+    <a href="canvas.html" class="sidebar-nav-item"><span class="sidebar-nav-num">—</span> Canvas</a>
+  </div>
+
+  <div class="sidebar-footer">
+    <p class="sidebar-footer-text">
+      Universidad Peruana Unión<br>
+      Ingeniería de Sistemas · IX Ciclo
+    </p>
+  </div>
+</nav>
+
+<!-- CONTENIDO -->
+<main class="main-content">
+
+  <!-- INTRO -->
+  <section class="section" id="intro" style="padding-bottom:0;">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">Kit ISACA</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">VI Cuadro Resumen</span>
+        </div>
+        <h1 class="section-title">Los 11 Factores de Diseño</h1>
+        <p class="section-subtitle">
+          Cada factor es una hoja del archivo <span class="text-mono">VI_Cuadro_Resumen_BCRP_COBIT2019.xlsx</span>.
+          Al completar las celdas de cada hoja DF con los valores del BCRP, la hoja Canvas aplica fórmulas
+          predefinidas de ISACA y calcula automáticamente la importancia de los 40 procesos COBIT.
+          Aquí se documenta el valor exacto, la evidencia que lo sustenta y qué procesos amplifica.
+        </p>
+      </div>
+
+      <div class="insight-box navy reveal">
+        <div class="insight-box-label" style="color:var(--navy-500);">Principio metodologico</div>
+        <p class="insight-box-text">
+          Ningún valor fue asignado por intuición. Cada número ingresado en el Kit tiene una fuente
+          citable: el Plan Estratégico BCRP 2022-2026, el PETI 2022-2026, la Constitución Política
+          del Perú (Art. 84°), los estándares del BIS, el SWIFT CSP o la ISO/IEC 27001.
+          El principio rector fue: <strong>si no hay evidencia documental, el valor es el mínimo</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DF1 -->
+  <section class="section" id="df1">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">DF1</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Estrategia</span>
+        </div>
+        <h2 class="section-title">Estrategia Empresarial</h2>
+      </div>
+
+      <div class="grid-2 stagger-group">
+        <div class="reveal">
+          <p style="font-size:.88rem; line-height:1.75; margin-bottom:20px;">
+            COBIT 2019 identifica 4 arquetipos estratégicos que toda empresa puede asumir.
+            El Kit pide calificar con qué intensidad el BCRP sigue cada uno (escala 1-5).
+            Estos valores alimentan directamente la hoja Canvas para ponderar los procesos
+            alineados a cada estrategia.
+          </p>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Arquetipo COBIT 2019</th>
+                  <th class="center">Valor BCRP</th>
+                  <th>Justificacion con evidencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row-highlight">
+                  <td>Growth / Acquisition (Crecimiento)</td>
+                  <td class="center"><span class="score-badge s2">1</span></td>
+                  <td>El BCRP no crece por adquisición. Su expansión está limitada constitucional y legalmente. No existe evidencia en el Plan Estratégico de estrategias de crecimiento agresivo.</td>
+                </tr>
+                <tr class="row-highlight">
+                  <td>Innovation / Differentiation (Innovación)</td>
+                  <td class="center"><span class="score-badge s2">4</span></td>
+                  <td>OE10: "desarrollos informáticos que impulsen la innovación" y OE9: "atraer talento profesional" son objetivos de diferenciación. El CBDC y la IA para analítica son iniciativas innovadoras documentadas en el PETI.</td>
+                </tr>
+                <tr>
+                  <td>Cost Leadership (Liderazgo en costos)</td>
+                  <td class="center"><span class="score-badge s2">2</span></td>
+                  <td>Si bien existe eficiencia operativa como objetivo institucional, el BCRP no compite en precio: es monopolio legal en emisión monetaria. La eficiencia es instrumental, no estratégica.</td>
+                </tr>
+                <tr>
+                  <td>Client / Stability (Cliente/Estabilidad)</td>
+                  <td class="center"><span class="score-badge high">5</span></td>
+                  <td>OE4 (estabilidad financiera y pagos), OE14 (gestión de riesgos), OE1/OE5 (inflación y reservas) son todos de estabilidad. La misión constitucional del BCRP es la estabilidad monetaria. Valor máximo completamente justificado.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="card card-highlight">
+            <h4 style="margin-bottom:12px;">Impacto en el Canvas</h4>
+            <p style="font-size:.82rem; margin-bottom:16px;">
+              El valor alto en <em>Client/Stability</em> amplifica automáticamente los procesos cuya
+              naturaleza es proteger la continuidad y el control. El valor en <em>Innovation</em>
+              amplifica los procesos de gestión de portafolio y servicios. La combinación de ambos
+              es la que explica por qué DSS04 y APO04 aparecen en zonas altas del Canvas.
+            </p>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:8px 12px; border-radius:6px;">
+                <span style="font-size:.78rem;">Procesos de continuidad (DSS04)</span>
+                <span class="score-badge high">Amplificado</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:8px 12px; border-radius:6px;">
+                <span style="font-size:.78rem;">Procesos de riesgo (APO12, EDM03)</span>
+                <span class="score-badge high">Amplificado</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:8px 12px; border-radius:6px;">
+                <span style="font-size:.78rem;">Procesos de innovación (APO04)</span>
+                <span class="score-badge s1">Moderado</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:8px 12px; border-radius:6px;">
+                <span style="font-size:.78rem;">Procesos de adquisición</span>
+                <span class="score-badge s0">Mínimo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DF2 -->
+  <section class="section section-alt" id="df2">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">DF2</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Coherencia matematica</span>
+        </div>
+        <h2 class="section-title">Metas Empresariales</h2>
+      </div>
+
+      <p class="reveal" style="font-size:.88rem; line-height:1.75; margin-bottom:24px;">
+        La hoja DF2 del Kit ISACA solicita asignar un nivel de importancia (1-5) a cada una de las
+        13 metas empresariales de COBIT (EG01 a EG13). En lugar de asignarlos subjetivamente, el equipo
+        diseñó una fórmula de conversión lineal basada en los puntajes reales de la 1ra Cascada.
+        Esto garantiza que ambas herramientas (Cascada manual y Kit) sean matemáticamente coherentes.
+      </p>
+
+      <div class="card card-highlight reveal" style="margin-bottom:28px;">
+        <h4 style="margin-bottom:12px;">Formula de Conversion</h4>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:.85rem; background:var(--navy-900); color:var(--gold-300); padding:16px 20px; border-radius:8px; line-height:2;">
+          Valor_DF2 = REDONDEO [ 1 + (Suma_cascada − Min) × (5 − 1) / (Max − Min) ]<br>
+          Donde:<br>
+          &nbsp;&nbsp;Min = 2 (EG09 con el menor puntaje)<br>
+          &nbsp;&nbsp;Max = 8 (EG08 con el mayor puntaje)<br>
+          &nbsp;&nbsp;Resultado: escala automática de 1 a 5
+        </div>
+        <p style="font-size:.78rem; color:var(--text-secondary); margin-top:12px;">
+          Esta fórmula lineal mapea el puntaje de la 1ra Cascada al rango 1-5 exigido por el Kit ISACA,
+          asegurando que el factor más relevante en la Cascada recibe el valor más alto en DF2 y viceversa.
+        </p>
+      </div>
+
+      <div class="table-wrap reveal">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="mono">Código</th>
+              <th>Meta Empresarial COBIT</th>
+              <th class="center">Suma 1ra Cascada</th>
+              <th class="center">Valor DF2 (Kit)</th>
+              <th>Justificacion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-highlight">
+              <td class="mono">EG08</td>
+              <td>Optimización de la funcionalidad de procesos internos</td>
+              <td class="center"><span class="score-badge high">8</span></td>
+              <td class="center"><strong>5</strong></td>
+              <td>Máximo en la cascada → valor máximo en Kit. Relacionado directamente con OE4, OE10 y OE14.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">EG06</td>
+              <td>Continuidad y disponibilidad de servicios de negocio</td>
+              <td class="center"><span class="score-badge high">7</span></td>
+              <td class="center"><strong>4</strong></td>
+              <td>LBTR 24/7 hace que la continuidad sea crítica. OE4 es el objetivo estratégico que más la impulsa.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">EG12</td>
+              <td>Transformación digital orientada al negocio</td>
+              <td class="center"><span class="score-badge high">7</span></td>
+              <td class="center"><strong>4</strong></td>
+              <td>OE10 y el PETI explícitamente establecen la transformación digital como objetivo estratégico 2022-2026.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">EG02</td>
+              <td>Riesgos de negocio gestionados</td>
+              <td class="center"><span class="score-badge s1">6</span></td>
+              <td class="center"><strong>3</strong></td>
+              <td>OE14 apunta directamente a la gestión de riesgos en todos los procesos. Evidencia en el Plan Estratégico.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">EG07</td>
+              <td>Decisiones de negocio basadas en información de calidad</td>
+              <td class="center"><span class="score-badge s1">6</span></td>
+              <td class="center"><strong>3</strong></td>
+              <td>OE1/OE5 requieren datamarts e IA para política monetaria y gestión de reservas. PETI menciona big data.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">EG11</td>
+              <td>Cumplimiento con políticas internas</td>
+              <td class="center"><span class="score-badge s1">6</span></td>
+              <td class="center"><strong>3</strong></td>
+              <td>OE14 explícitamente requiere cumplimiento en todos los procesos. Marco normativo riguroso del banco central.</td>
+            </tr>
+            <tr>
+              <td class="mono">EG03</td>
+              <td>Cumplimiento de leyes y regulaciones externas</td>
+              <td class="center"><span class="score-badge s0">3</span></td>
+              <td class="center"><strong>1</strong></td>
+              <td>Sorprendentemente bajo en la Cascada. El cumplimiento externo (Constitución, BIS, SWIFT CSP) fue capturado implícitamente en OE14 pero no como objetivo propio.</td>
+            </tr>
+            <tr>
+              <td class="mono">EG01,EG04,EG05</td>
+              <td>Valor del portafolio, cartera de productos, servicio al cliente</td>
+              <td class="center"><span class="score-badge s0">2</span></td>
+              <td class="center"><strong>1</strong></td>
+              <td>El BCRP no tiene portafolio comercial ni compite por clientes. Valor mínimo justificado.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DF3 -->
+  <section class="section" id="df3">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">DF3</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Perfil de Riesgo</span>
+        </div>
+        <h2 class="section-title">Perfil de Riesgo Empresarial</h2>
+      </div>
+
+      <p class="reveal" style="font-size:.88rem; line-height:1.75; margin-bottom:24px;">
+        El Kit ISACA identifica 20 categorías de riesgo TI universales. Para cada una, se asigna
+        un nivel de Impacto (1-5) y Probabilidad (1-5). El producto de ambos determina la criticidad.
+        Solo se calificaron como altos los riesgos con evidencia textual directa en el PETI o en el
+        Plan Estratégico. Se muestran las categorías más críticas para el BCRP.
+      </p>
+
+      <div class="table-wrap reveal">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Categoría de Riesgo TI</th>
+              <th class="center">Impacto</th>
+              <th class="center">Probabilidad</th>
+              <th class="center">Criticidad</th>
+              <th>Evidencia en documentos BCRP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ataques lógicos/maliciosos (APT, ransomware)</strong></td>
+              <td class="center"><span class="score-badge very-high">5</span></td>
+              <td class="center"><span class="score-badge very-high">5</span></td>
+              <td class="center"><span class="score-badge very-high">25</span></td>
+              <td>PETI p.9: "brechas críticas de ciberseguridad identificadas". Sectores financieros son objetivo prioritario de APTs según BIS y SWIFT CSP.</td>
+            </tr>
+            <tr>
+              <td><strong>Acciones no autorizadas (fraude, abuso)</strong></td>
+              <td class="center"><span class="score-badge very-high">5</span></td>
+              <td class="center"><span class="score-badge very-high">5</span></td>
+              <td class="center"><span class="score-badge very-high">25</span></td>
+              <td>El SWIFT CSP fue creado precisamente por el fraude al Bangladesh Bank (2016). El BCRP opera SWIFT y está obligado al CSP.</td>
+            </tr>
+            <tr>
+              <td><strong>Problemas de gestión de datos/información</strong></td>
+              <td class="center"><span class="score-badge very-high">5</span></td>
+              <td class="center"><span class="score-badge very-high">5</span></td>
+              <td class="center"><span class="score-badge very-high">25</span></td>
+              <td>PETI: brecha activa en calidad e integración de datos identificada. OE7 del Plan Estratégico apunta a "información de calidad para decisiones".</td>
+            </tr>
+            <tr>
+              <td><strong>Incidentes de infraestructura TI</strong></td>
+              <td class="center"><span class="score-badge very-high">5</span></td>
+              <td class="center"><span class="score-badge high">4</span></td>
+              <td class="center"><span class="score-badge high">20</span></td>
+              <td>Solo 2 data centers operativos. El tercer DC es objetivo del PETI 2022-2026 pero aún pendiente. Cualquier incidente en los 2 DC actuales tiene impacto catastrófico en pagos nacionales.</td>
+            </tr>
+            <tr>
+              <td><strong>Incumplimiento regulatorio</strong></td>
+              <td class="center"><span class="score-badge very-high">5</span></td>
+              <td class="center"><span class="score-badge high">3</span></td>
+              <td class="center"><span class="score-badge high">15</span></td>
+              <td>El BCRP está sujeto a auditorías del BIS y del SWIFT CSP. El incumplimiento tiene consecuencias legales directas al ser un banco central constitucional.</td>
+            </tr>
+            <tr>
+              <td>Fallas de servicios de terceros</td>
+              <td class="center"><span class="score-badge high">4</span></td>
+              <td class="center"><span class="score-badge s1">2</span></td>
+              <td class="center"><span class="score-badge s1">8</span></td>
+              <td>El BCRP opera principalmente con insourcing (60%). La dependencia de terceros es relativamente baja pero no nula (SWIFT es un proveedor externo crítico).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="insight-box reveal mt-6">
+        <div class="insight-box-label">Distribucion del perfil de riesgo</div>
+        <p class="insight-box-text">
+          De las 20 categorías del Kit: <strong>3 categorías obtuvieron criticidad máxima (25)</strong>,
+          4 obtuvieron criticidad alta (15-20), y las 13 restantes obtuvieron criticidad media-baja (1-12).
+          Este perfil es coherente con la naturaleza de un banco central: pocas categorías de riesgo con
+          impacto potencial catastrófico, pero con probabilidad igualmente alta por ser objetivo de alto valor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DF4 -->
+  <section class="section section-alt" id="df4">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">DF4</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Problemas actuales</span>
+        </div>
+        <h2 class="section-title">Problemas Relacionados con TI</h2>
+      </div>
+
+      <p class="reveal" style="font-size:.88rem; line-height:1.75; margin-bottom:24px;">
+        El Kit ISACA lista 20 problemas típicos de TI. Cada uno se califica como:
+        0 (no existe), 1 (problema menor), 2 (problema medio) o 3 (problema grave activo).
+        El BCRP identificó 7 problemas graves con evidencia directa en el PETI.
+      </p>
+
+      <div class="table-wrap reveal">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Problema TI (Kit ISACA)</th>
+              <th class="center">Nivel</th>
+              <th>Evidencia en PETI / Plan Estratégico BCRP</th>
+              <th>Proceso COBIT que lo resuelve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Incidentes significativos de seguridad de la información</strong></td>
+              <td class="center"><span class="score-badge very-high">3</span></td>
+              <td>PETI p.9: "brechas críticas de ciberseguridad identificadas". SWIFT CSP obligatorio activo.</td>
+              <td><span class="process-chip top">DSS05</span> <span class="process-chip top">APO13</span></td>
+            </tr>
+            <tr>
+              <td><strong>Recursos TI insuficientes o habilidades inadecuadas</strong></td>
+              <td class="center"><span class="score-badge very-high">3</span></td>
+              <td>PETI: necesidad de especialistas en ciberseguridad, big data e IA. OE9 apunta a atraer y retener talento.</td>
+              <td><span class="process-chip">APO07</span> <span class="process-chip">BAI08</span></td>
+            </tr>
+            <tr>
+              <td><strong>Proyectos TI que no cumplen expectativas o llegan tarde</strong></td>
+              <td class="center"><span class="score-badge very-high">3</span></td>
+              <td>La modernización del LBTR y SIMC ha tenido retrasos documentados. El PETI menciona la urgencia de actualización.</td>
+              <td><span class="process-chip">BAI01</span> <span class="process-chip">APO06</span></td>
+            </tr>
+            <tr>
+              <td><strong>Implementación TI obstaculizada por arquitectura de TI legacy</strong></td>
+              <td class="center"><span class="score-badge very-high">3</span></td>
+              <td>LBTR y SIMC usan tecnología de generaciones anteriores. El PETI identifica la modernización como objetivo urgente.</td>
+              <td><span class="process-chip">APO03</span> <span class="process-chip">BAI03</span></td>
+            </tr>
+            <tr>
+              <td><strong>Problemas de calidad e integración de datos</strong></td>
+              <td class="center"><span class="score-badge very-high">3</span></td>
+              <td>OE7 del Plan Estratégico: "información de calidad para decisiones". PETI: brecha en datamarts e integración.</td>
+              <td><span class="process-chip">APO14</span> <span class="process-chip">BAI04</span></td>
+            </tr>
+            <tr>
+              <td><strong>Incapacidad de aprovechar nuevas tecnologías o innovar</strong></td>
+              <td class="center"><span class="score-badge very-high">3</span></td>
+              <td>OE10: "desarrollos informáticos que impulsen innovación". PETI: CBDC en evaluación, IA en analítica pendiente.</td>
+              <td><span class="process-chip">APO04</span> <span class="process-chip">APO02</span></td>
+            </tr>
+            <tr>
+              <td><strong>Incumplimiento de requisitos regulatorios o contractuales</strong></td>
+              <td class="center"><span class="score-badge very-high">3</span></td>
+              <td>Pendiente: certificación ISO 27001, cumplimiento SWIFT CSP y estándares BIS para banco central.</td>
+              <td><span class="process-chip top">MEA03</span> <span class="process-chip top">APO13</span></td>
+            </tr>
+            <tr>
+              <td>Tiempos de respuesta inadecuados en TI</td>
+              <td class="center"><span class="score-badge s1">2</span></td>
+              <td>El LBTR requiere procesamiento en tiempo real. Las capacidades de respuesta son críticas pero no hay queja documentada activa.</td>
+              <td><span class="process-chip">DSS01</span> <span class="process-chip">BAI04</span></td>
+            </tr>
+            <tr>
+              <td>Falta de alineación entre TI y el negocio</td>
+              <td class="center"><span class="score-badge s1">2</span></td>
+              <td>El PETI existe y está aprobado al máximo nivel, lo que indica alineación. Sin embargo, la ausencia de un EGIT formal limita la institucionalización de esa alineación.</td>
+              <td><span class="process-chip">APO02</span> <span class="process-chip">EDM01</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DF5 y DF6 juntos -->
+  <section class="section" id="df5">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">DF5 — DF6</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Contexto externo</span>
+        </div>
+        <h2 class="section-title">Amenazas y Cumplimiento</h2>
+      </div>
+
+      <div class="grid-2 stagger-group">
+        <!-- DF5 -->
+        <div id="df5-block" class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">DF5</span>
+              <h3 style="margin-top:4px;">Panorama de Amenazas</h3>
+            </div>
+            <span class="card-code">100% Alto</span>
+          </div>
+
+          <p style="font-size:.82rem; margin-bottom:16px;">
+            El Kit solicita distribuir el 100% entre tres niveles de panorama de amenazas: Alto,
+            Normal y Bajo. La distribución del BCRP fue inequívoca.
+          </p>
+
+          <div style="background:var(--gray-50); padding:14px; border-radius:8px; margin-bottom:16px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; text-align:center;">
+              <div>
+                <div class="score-badge very-high" style="width:100%; text-align:center; padding:6px;">ALTO</div>
+                <div style="font-size:1.2rem; font-weight:700; margin:6px 0;">100%</div>
+              </div>
+              <div>
+                <div class="score-badge s1" style="width:100%; text-align:center; padding:6px;">NORMAL</div>
+                <div style="font-size:1.2rem; font-weight:700; margin:6px 0;">0%</div>
+              </div>
+              <div>
+                <div class="score-badge s0" style="width:100%; text-align:center; padding:6px;">BAJO</div>
+                <div style="font-size:1.2rem; font-weight:700; margin:6px 0;">0%</div>
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size:.8rem; line-height:1.65; color:var(--text-secondary);">
+            Los bancos centrales son objetivos de ciberataques de estado-nación. El BCRP opera el sistema
+            de liquidación interbancaria de todo el Perú (LBTR) y gestiona las reservas internacionales.
+            Un ataque exitoso tendría consecuencias sistémicas para todo el sistema financiero nacional.
+            Este nivel de exposición coloca al BCRP en la categoría de "infraestructura crítica nacional",
+            lo que justifica el 100% en la categoría Alto.
+          </p>
+        </div>
+
+        <!-- DF6 -->
+        <div id="df6" class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">DF6</span>
+              <h3 style="margin-top:4px;">Requisitos de Cumplimiento</h3>
+            </div>
+            <span class="card-code">100% Alto</span>
+          </div>
+
+          <p style="font-size:.82rem; margin-bottom:16px;">
+            El Kit solicita evaluar la exigencia normativa aplicable. El marco legal y regulatorio del
+            BCRP es múltiple, jerárquico y estricto, sin ninguna excepción.
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:16px;">
+            <div style="display:flex; align-items:flex-start; gap:10px; background:var(--navy-50); padding:10px 14px; border-radius:8px; border-left:3px solid var(--navy-400);">
+              <span class="score-badge very-high" style="min-width:fit-content; font-size:.6rem;">Máximo</span>
+              <div>
+                <div style="font-size:.75rem; font-weight:700; margin-bottom:2px;">Constitución Art. 84°</div>
+                <div style="font-size:.7rem; color:var(--text-secondary);">Mandato constitucional de preservar la estabilidad monetaria. Incumplimiento = inconstitucionalidad.</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:flex-start; gap:10px; background:var(--navy-50); padding:10px 14px; border-radius:8px; border-left:3px solid var(--navy-400);">
+              <span class="score-badge very-high" style="min-width:fit-content; font-size:.6rem;">Máximo</span>
+              <div>
+                <div style="font-size:.75rem; font-weight:700; margin-bottom:2px;">SWIFT Customer Security Programme (CSP)</div>
+                <div style="font-size:.7rem; color:var(--text-secondary);">Obligatorio para operar en la red SWIFT. Auditorías anuales. Incumplimiento = desconexión de pagos internacionales.</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:flex-start; gap:10px; background:var(--navy-50); padding:10px 14px; border-radius:8px; border-left:3px solid var(--navy-400);">
+              <span class="score-badge very-high" style="min-width:fit-content; font-size:.6rem;">Máximo</span>
+              <div>
+                <div style="font-size:.75rem; font-weight:700; margin-bottom:2px;">BIS — Principios de Gobierno de TC</div>
+                <div style="font-size:.7rem; color:var(--text-secondary);">Estándares internacionales para bancos centrales. Supervisión implícita del sistema bancario global.</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:flex-start; gap:10px; background:var(--navy-50); padding:10px 14px; border-radius:8px; border-left:3px solid var(--navy-400);">
+              <span class="score-badge high" style="min-width:fit-content; font-size:.6rem;">Objetivo</span>
+              <div>
+                <div style="font-size:.75rem; font-weight:700; margin-bottom:2px;">ISO/IEC 27001:2022</div>
+                <div style="font-size:.7rem; color:var(--text-secondary);">Certificación objetivo según el PETI 2022-2026. Aún no obtenida — es precisamente una brecha TO-BE.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DF7 y DF8 juntos -->
+  <section class="section section-alt" id="df7">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">DF7 — DF8</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Capacidad interna</span>
+        </div>
+        <h2 class="section-title">Rol y Abastecimiento de TI</h2>
+      </div>
+
+      <div class="grid-2 stagger-group">
+        <!-- DF7 -->
+        <div id="df7-block" class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">DF7</span>
+              <h3 style="margin-top:4px;">Rol de TI en la Institución</h3>
+            </div>
+          </div>
+
+          <p style="font-size:.82rem; margin-bottom:16px;">
+            COBIT 2019 clasifica el rol de TI según la metodología de McFarlan Strategic Grid.
+            El BCRP presenta un perfil dual único: TI es simultáneamente operativamente crítica
+            y estratégicamente relevante.
+          </p>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Rol McFarlan</th>
+                  <th class="center">Valor</th>
+                  <th>Razon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Factory (Fábrica)</strong></td>
+                  <td class="center"><span class="score-badge high">5</span></td>
+                  <td>LBTR opera 24/7. Cualquier interrupción es una crisis nacional. TI no puede fallar.</td>
+                </tr>
+                <tr>
+                  <td><strong>Strategic (Estratégico)</strong></td>
+                  <td class="center"><span class="score-badge high">5</span></td>
+                  <td>El PETI fue aprobado al más alto nivel y define la TI como habilitadora estratégica. OE10 es un objetivo estratégico de TI.</td>
+                </tr>
+                <tr>
+                  <td>Support (Soporte)</td>
+                  <td class="center"><span class="score-badge s0">2</span></td>
+                  <td>Hay actividades de soporte administrativo (Office 365, GESCON) pero no dominan el perfil.</td>
+                </tr>
+                <tr>
+                  <td>Turnaround (Transición)</td>
+                  <td class="center"><span class="score-badge s0">1</span></td>
+                  <td>No hay evidencia de TI en transición hacia un nuevo modelo. El rol ya está consolidado.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="insight-box reveal mt-4" style="margin:12px 0 0 0;">
+            <p style="font-size:.75rem;">
+              Un banco central con rol de Fábrica + Estratégico simultáneamente es una configuración que amplifica
+              prácticamente todos los procesos COBIT relacionados con continuidad (DSS04) y gobierno (EDM01-EDM05).
+            </p>
+          </div>
+        </div>
+
+        <!-- DF8 -->
+        <div id="df8" class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">DF8</span>
+              <h3 style="margin-top:4px;">Modelo de Abastecimiento de TI</h3>
+            </div>
+          </div>
+
+          <p style="font-size:.82rem; margin-bottom:16px;">
+            Cómo obtiene el BCRP sus capacidades tecnológicas: ¿desarrolla internamente, externaliza o usa la nube?
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span style="font-size:.8rem; font-weight:600;">Insourcing (Interno)</span>
+                <span style="font-size:.8rem; font-weight:700; color:var(--navy-600);">60%</span>
+              </div>
+              <div style="background:var(--gray-200); border-radius:4px; height:8px; overflow:hidden;">
+                <div class="maturity-bar-fill target" data-fill="60%" style="height:8px; background:var(--navy-500);"></div>
+              </div>
+              <p style="font-size:.72rem; color:var(--text-secondary); margin-top:4px;">LBTR, SIMC, infraestructura de DCs, seguridad perimetral: todo gestionado internamente por la GTI.</p>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span style="font-size:.8rem; font-weight:600;">Cloud</span>
+                <span style="font-size:.8rem; font-weight:700; color:var(--navy-600);">20%</span>
+              </div>
+              <div style="background:var(--gray-200); border-radius:4px; height:8px; overflow:hidden;">
+                <div class="maturity-bar-fill target" data-fill="20%" style="height:8px; background:var(--navy-400);"></div>
+              </div>
+              <p style="font-size:.72rem; color:var(--text-secondary); margin-top:4px;">Office 365, algunas herramientas colaborativas y analítica en la nube. El PETI contempla expansión controlada.</p>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span style="font-size:.8rem; font-weight:600;">Outsourcing</span>
+                <span style="font-size:.8rem; font-weight:700; color:var(--navy-600);">20%</span>
+              </div>
+              <div style="background:var(--gray-200); border-radius:4px; height:8px; overflow:hidden;">
+                <div class="maturity-bar-fill target" data-fill="20%" style="height:8px; background:var(--gray-400);"></div>
+              </div>
+              <p style="font-size:.72rem; color:var(--text-secondary); margin-top:4px;">SWIFT es proveedor externo crítico. Algunos servicios de mantenimiento de equipos son externalizados.</p>
+            </div>
+          </div>
+
+          <div style="background:var(--gold-50); border:1px solid var(--gold-200); border-radius:8px; padding:12px; font-size:.78rem;">
+            <strong style="color:var(--gold-700);">Implicancia en el Canvas:</strong> El alto porcentaje de insourcing
+            amplifica los procesos de gobierno del personal TI (APO07) y de gestión de proveedores estratégicos (APO10),
+            ya que la GTI debe ser suficientemente capaz de gestionar internamente sus sistemas críticos.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DF9 y DF10 juntos -->
+  <section class="section" id="df9">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">DF9 — DF10</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Como opera TI</span>
+        </div>
+        <h2 class="section-title">Implementación y Adopción Tecnológica</h2>
+      </div>
+
+      <div class="grid-2 stagger-group">
+        <!-- DF9 -->
+        <div id="df9-block" class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">DF9</span>
+              <h3 style="margin-top:4px;">Métodos de Implementación TI</h3>
+            </div>
+          </div>
+
+          <p style="font-size:.82rem; margin-bottom:16px;">
+            ¿Cómo implementa sus proyectos TI el BCRP? La distribución refleja la naturaleza
+            regulatoria de los sistemas financieros.
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span style="font-size:.8rem; font-weight:600;">Tradicional / Cascada</span>
+                <span style="font-size:.8rem; font-weight:700; color:var(--navy-600);">75%</span>
+              </div>
+              <div style="background:var(--gray-200); border-radius:4px; height:8px; overflow:hidden;">
+                <div class="maturity-bar-fill target" data-fill="75%" style="height:8px; background:var(--navy-500);"></div>
+              </div>
+              <p style="font-size:.72rem; color:var(--text-secondary); margin-top:4px;">Los cambios en LBTR, SIMC y sistemas financieros críticos requieren UAT extensivo, pruebas de regresión completa y aprobaciones regulatorias formales antes de cada despliegue.</p>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span style="font-size:.8rem; font-weight:600;">Ágil (Scrum/Kanban)</span>
+                <span style="font-size:.8rem; font-weight:700; color:var(--navy-600);">20%</span>
+              </div>
+              <div style="background:var(--gray-200); border-radius:4px; height:8px; overflow:hidden;">
+                <div class="maturity-bar-fill target" data-fill="20%" style="height:8px; background:var(--navy-400);"></div>
+              </div>
+              <p style="font-size:.72rem; color:var(--text-secondary); margin-top:4px;">Para proyectos no críticos: herramientas internas, dashboards analíticos, sistemas de soporte administrativo donde la velocidad es más importante que la formalidad.</p>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                <span style="font-size:.8rem; font-weight:600;">DevOps</span>
+                <span style="font-size:.8rem; font-weight:700; color:var(--navy-600);">5%</span>
+              </div>
+              <div style="background:var(--gray-200); border-radius:4px; height:8px; overflow:hidden;">
+                <div class="maturity-bar-fill target" data-fill="5%" style="height:8px; background:var(--gray-400);"></div>
+              </div>
+              <p style="font-size:.72rem; color:var(--text-secondary); margin-top:4px;">Incipiente. El PETI menciona la modernización hacia integración continua, pero la madurez DevOps es aún muy baja en el contexto actual del BCRP.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF10 -->
+        <div id="df10" class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">DF10</span>
+              <h3 style="margin-top:4px;">Estrategia de Adopción Tecnológica</h3>
+            </div>
+          </div>
+
+          <p style="font-size:.82rem; margin-bottom:16px;">
+            ¿Cómo adopta el BCRP las nuevas tecnologías: siendo pionero, siguiendo estándares probados
+            o adoptando lentamente? El perfil de un banco central no admite ambigüedad aquí.
+          </p>
+
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="background:var(--navy-50); border:1px solid var(--navy-100); border-radius:8px; padding:14px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:.85rem; font-weight:700; color:var(--navy-700);">Seguidor (Follower) — 75%</span>
+                <span class="score-badge high">Dominante</span>
+              </div>
+              <p style="font-size:.75rem; color:var(--text-secondary); line-height:1.6;">
+                El BCRP adopta estándares ya ampliamente validados: ISO 20022 para mensajería SWIFT,
+                SWIFT CSP ya probado en decenas de bancos centrales, COBIT 2019 como marco de gobierno
+                ya adoptado por miles de organizaciones. La prudencia institucional exige esta postura.
+              </p>
+            </div>
+            <div style="background:var(--gray-50); border:1px solid var(--border-color); border-radius:8px; padding:14px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:.85rem; font-weight:700;">Precursor (First Mover) — 25%</span>
+                <span class="score-badge s1">Selectivo</span>
+              </div>
+              <p style="font-size:.75rem; color:var(--text-secondary); line-height:1.6;">
+                Solo en áreas donde el BCRP tiene razones institucionales para ser pionero en Latinoamérica:
+                el proyecto CBDC (moneda digital del banco central) y la aplicación de IA avanzada para la
+                política monetaria. Ambos son mencionados explícitamente en el PETI.
+              </p>
+            </div>
+            <div style="background:var(--gray-50); border:1px solid var(--border-color); border-radius:8px; padding:14px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:.85rem; font-weight:700;">Rezagado (Slow Adopter) — 0%</span>
+                <span class="score-badge s0">No aplica</span>
+              </div>
+              <p style="font-size:.75rem; color:var(--text-secondary); line-height:1.6;">
+                La modernización urgente del LBTR y la necesidad del tercer DC demuestran que el BCRP no puede
+                permitirse ser rezagado tecnológico. El PETI 2022-2026 fue diseñado precisamente para evitar
+                ese escenario.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DF11 -->
+  <section class="section section-alt" id="df11">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">DF11</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Clasificacion</span>
+        </div>
+        <h2 class="section-title">Tamaño de la Empresa</h2>
+      </div>
+
+      <div class="grid-2 stagger-group">
+        <div class="reveal">
+          <p style="font-size:.88rem; line-height:1.75; margin-bottom:20px;">
+            Este factor es el más simple pero tiene una consecuencia determinante: el tamaño de la
+            organización define cuántos de los 40 procesos COBIT 2019 son aplicables. Una empresa
+            pequeña puede omitir varios procesos de gobierno. Una empresa grande debe aplicarlos todos.
+          </p>
+
+          <div style="display:flex; align-items:center; gap:20px; background:var(--gray-50); padding:20px; border-radius:12px; border:1px solid var(--border-color); margin-bottom:20px;">
+            <div style="width:80px; height:80px; border-radius:12px; background:var(--navy-900); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <span style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:700; color:var(--gold-400);">G</span>
+            </div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:700; line-height:1;">Grande</div>
+              <div style="font-size:.78rem; color:var(--text-muted); margin-top:4px;">Enterprise Size: Large</div>
+              <div style="font-size:.8rem; color:var(--text-secondary); margin-top:6px;">Aplica los 40 procesos COBIT. Scope completo sin reducción.</div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Criterio</th>
+                  <th>BCRP</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Número de empleados</td>
+                  <td>Aprox. 1,600+ colaboradores (Plan Estratégico)</td>
+                </tr>
+                <tr>
+                  <td>Presupuesto institucional</td>
+                  <td>Autónomo constitucional. Gestiona las Reservas Internacionales del Perú (US$ 60+ Bil)</td>
+                </tr>
+                <tr>
+                  <td>Impacto operativo</td>
+                  <td>Opera el sistema de pagos de todo el sistema financiero peruano (LBTR, SIMC)</td>
+                </tr>
+                <tr>
+                  <td>Alcance geográfico</td>
+                  <td>Nacional con presencia en Lima y ciudades principales. Conexión internacional SWIFT</td>
+                </tr>
+                <tr>
+                  <td>Clasificación final</td>
+                  <td><strong>Grande (Large Enterprise)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="card card-navy">
+            <h4 style="color:var(--white); margin-bottom:12px;">Consecuencia en el Canvas</h4>
+            <p style="color:var(--navy-200); font-size:.82rem; line-height:1.65; margin-bottom:16px;">
+              Al clasificar al BCRP como "Grande", el Kit ISACA no excluye ningún proceso COBIT 2019 del
+              análisis. Los 40 procesos reciben puntaje en el Canvas. Esto es importante porque:
+            </p>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="background:rgba(255,255,255,.05); padding:10px 14px; border-radius:8px; border:1px solid rgba(255,255,255,.08);">
+                <div style="font-size:.7rem; color:var(--gold-400); font-weight:700; letter-spacing:.08em; margin-bottom:4px;">ALCANCE COMPLETO</div>
+                <div style="font-size:.78rem; color:var(--navy-200);">No se omitió ningún proceso. Los 40 reciben evaluación en el Canvas.</div>
+              </div>
+              <div style="background:rgba(255,255,255,.05); padding:10px 14px; border-radius:8px; border:1px solid rgba(255,255,255,.08);">
+                <div style="font-size:.7rem; color:var(--gold-400); font-weight:700; letter-spacing:.08em; margin-bottom:4px;">GOBIERNO COMPLETO</div>
+                <div style="font-size:.78rem; color:var(--navy-200);">Los 5 procesos EDM son todos aplicables al BCRP. Un banco central no puede tener un gobierno TI incompleto.</div>
+              </div>
+              <div style="background:rgba(255,255,255,.05); padding:10px 14px; border-radius:8px; border:1px solid rgba(255,255,255,.08);">
+                <div style="font-size:.7rem; color:var(--gold-400); font-weight:700; letter-spacing:.08em; margin-bottom:4px;">DIFERENCIACION</div>
+                <div style="font-size:.78rem; color:var(--navy-200);">Las empresas pequeñas o medianas podrían implementar solo 15-20 procesos. El BCRP debe implementar los 6 centrales con profundidad y los 34 restantes con al menos Nivel 2.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumen ejecutivo de los 11 factores -->
+      <div style="margin-top:48px;">
+        <div class="section-header reveal" style="margin-bottom:24px;">
+          <h3 class="section-title" style="font-size:1.6rem;">Resumen de los 11 Factores</h3>
+        </div>
+        <div class="table-wrap reveal">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="mono">Factor</th>
+                <th>Nombre</th>
+                <th>Valor Principal BCRP</th>
+                <th>Top Procesos Amplificados</th>
+                <th>Evidencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="mono">DF1</td><td>Estrategia Empresarial</td><td>Client/Stability = 5</td><td><span class="process-chip top">APO12</span> <span class="process-chip top">DSS04</span></td><td>OE4, OE14, OE1/OE5</td></tr>
+              <tr><td class="mono">DF2</td><td>Metas Empresariales</td><td>EG08 → valor 5 (fórmula)</td><td><span class="process-chip top">DSS05</span> <span class="process-chip top">APO13</span></td><td>1ra Cascada convertida</td></tr>
+              <tr><td class="mono">DF3</td><td>Perfil de Riesgo</td><td>3 categorías en criticidad 25/25</td><td><span class="process-chip top">APO12</span> <span class="process-chip top">APO13</span></td><td>PETI p.9, SWIFT CSP</td></tr>
+              <tr><td class="mono">DF4</td><td>Problemas TI</td><td>7 problemas nivel GRAVE (3)</td><td><span class="process-chip top">MEA03</span> <span class="process-chip top">DSS05</span></td><td>PETI brechas activas</td></tr>
+              <tr><td class="mono">DF5</td><td>Panorama de Amenazas</td><td>100% Alto</td><td><span class="process-chip top">DSS05</span> <span class="process-chip top">EDM03</span></td><td>Infraestructura crítica nacional</td></tr>
+              <tr><td class="mono">DF6</td><td>Cumplimiento</td><td>100% Alto</td><td><span class="process-chip top">MEA03</span> <span class="process-chip top">APO13</span></td><td>Art. 84°, BIS, SWIFT CSP</td></tr>
+              <tr><td class="mono">DF7</td><td>Rol de TI</td><td>Factory=5, Strategic=5</td><td><span class="process-chip top">DSS04</span> <span class="process-chip">EDM01</span></td><td>LBTR 24/7, PETI estratégico</td></tr>
+              <tr><td class="mono">DF8</td><td>Abastecimiento</td><td>Insourcing 60%</td><td><span class="process-chip">APO07</span> <span class="process-chip">APO10</span></td><td>GTI gestiona sistemas críticos</td></tr>
+              <tr><td class="mono">DF9</td><td>Implementación</td><td>Tradicional 75%</td><td><span class="process-chip">BAI01</span> <span class="process-chip">BAI06</span></td><td>LBTR requiere UAT formal</td></tr>
+              <tr><td class="mono">DF10</td><td>Adopción</td><td>Follower 75%</td><td><span class="process-chip">APO04</span> <span class="process-chip">BAI02</span></td><td>Estándares probados (SWIFT, ISO)</td></tr>
+              <tr><td class="mono">DF11</td><td>Tamaño</td><td>Grande (Large)</td><td>Todos los 40 procesos</td><td>Reservas internacionales, 1600+ empleados</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--navy-900); color:var(--navy-300); padding:24px 48px; border-top:1px solid var(--navy-700);">
+    <div style="max-width:var(--content-max); margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="font-size:.78rem;">BCRP · COBIT® 2019 · Universidad Peruana Unión · 2025</div>
+      <a href="index.html" style="font-size:.78rem; color:var(--gold-400);">← Volver al inicio</a>
+    </div>
+  </footer>
+
+</main>
+
+<button id="back-to-top" style="position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--navy-800);border:1px solid var(--navy-600);display:flex;align-items:center;justify-content:center;z-index:50;opacity:0;transition:opacity .3s;cursor:pointer;" aria-label="Volver al inicio">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 8l4-4 4 4" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/></svg>
+</button>
+
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+<script src="../js/charts.js"></script>
+</body>
+</html>

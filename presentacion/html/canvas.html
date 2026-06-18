@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas — 40 Procesos COBIT 2019 · BCRP</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<header class="mobile-header">
+  <span class="mobile-logo">Canvas COBIT 2019</span>
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress-bar"></div>
+</div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar" aria-label="Navegación">
+  <div class="sidebar-brand">
+    <span class="sidebar-brand-label">COBIT® 2019</span>
+    <div class="sidebar-brand-title">Canvas</div>
+    <div class="sidebar-brand-sub">40 Procesos · BCRP</div>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="sidebar-nav-group">
+      <span class="sidebar-nav-group-label">Secciones</span>
+    </div>
+    <a href="#que-es"        class="sidebar-nav-item" data-section="que-es"><span class="sidebar-nav-num">01</span> Qué es el Canvas</a>
+    <a href="#grafico"       class="sidebar-nav-item" data-section="grafico"><span class="sidebar-nav-num">02</span> Gráfico de 40 Procesos</a>
+    <a href="#top6"          class="sidebar-nav-item" data-section="top6"><span class="sidebar-nav-num">03</span> Top 6 Procesos</a>
+    <a href="#dominios"      class="sidebar-nav-item" data-section="dominios"><span class="sidebar-nav-num">04</span> Análisis por Dominio</a>
+    <a href="#mea01"         class="sidebar-nav-item" data-section="mea01"><span class="sidebar-nav-num">05</span> Ajuste MEA01</a>
+    <a href="#convergencia"  class="sidebar-nav-item" data-section="convergencia"><span class="sidebar-nav-num">06</span> Verificación Cascada</a>
+
+    <div class="sidebar-nav-group" style="margin-top:16px;">
+      <span class="sidebar-nav-group-label">Navegación</span>
+    </div>
+    <a href="index.html"    class="sidebar-nav-item"><span class="sidebar-nav-num">←</span> Inicio</a>
+    <a href="factores.html" class="sidebar-nav-item"><span class="sidebar-nav-num">—</span> 11 Factores</a>
+  </div>
+
+  <div class="sidebar-footer">
+    <p class="sidebar-footer-text">
+      Archivo entregable:<br>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:.65rem; word-break:break-all;">VI_Cuadro_Resumen_BCRP_COBIT2019.xlsx</span>
+    </p>
+  </div>
+</nav>
+
+<!-- CONTENIDO -->
+<main class="main-content">
+
+  <!-- INTRO HERO -->
+  <section class="hero" id="que-es" style="min-height:50vh; padding:80px 0 60px;">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+
+    <div class="hero-inner" style="max-width:800px;">
+      <div class="hero-eyebrow animate-fade-down">
+        <span class="hero-badge">Kit Oficial ISACA — Hoja Canvas</span>
+        <span class="hero-line"></span>
+      </div>
+
+      <h1 class="hero-title animate-fade-up delay-100" style="font-size:clamp(2rem,5vw,3.2rem);">
+        El Canvas de los<br><em>40 Procesos COBIT</em>
+      </h1>
+
+      <p class="hero-subtitle animate-fade-up delay-200" style="font-size:.95rem;">
+        La hoja Canvas del archivo <span style="font-family:'JetBrains Mono',monospace; color:var(--gold-300);">VI_Cuadro_Resumen_BCRP_COBIT2019.xlsx</span>
+        es el resultado automático de ingresar los 11 Factores de Diseño en las hojas DF1 a DF11.
+        Combina todos los factores mediante fórmulas predefinidas de ISACA y entrega la columna
+        "Concluded Scope" — la importancia relativa de cada uno de los 40 procesos para el BCRP.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section" id="como-funciona">
+    <div class="section-inner">
+      <div class="grid-2 stagger-group">
+        <div class="card card-navy reveal">
+          <h4 style="color:var(--white); margin-bottom:12px;">Estructura del archivo entregable</h4>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,.05); padding:8px 12px; border-radius:6px;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--gold-300); min-width:40px;">DF1</span>
+              <span style="font-size:.78rem; color:var(--navy-200);">Hoja: Estrategia Empresarial (valores ingresados)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,.05); padding:8px 12px; border-radius:6px;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--gold-300); min-width:40px;">DF2</span>
+              <span style="font-size:.78rem; color:var(--navy-200);">Hoja: Metas Empresariales (convertidas desde Cascada)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; background:rgba(255,255,255,.05); padding:8px 12px; border-radius:6px;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--gold-300); min-width:40px;">...</span>
+              <span style="font-size:.78rem; color:var(--navy-200);">Hojas DF3 a DF11 (cada factor en su hoja propia)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px; background:rgba(200,168,75,.08); padding:8px 12px; border-radius:6px; border:1px solid rgba(200,168,75,.2);">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--gold-400); min-width:60px;">Canvas</span>
+              <span style="font-size:.78rem; color:var(--navy-200);">Hoja final: calcula automáticamente los 40 procesos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="insight-box">
+            <div class="insight-box-label">Qué mide "Concluded Scope"</div>
+            <p class="insight-box-text">
+              La columna "Concluded Scope" del Canvas asigna un puntaje de importancia a cada uno de los
+              40 procesos COBIT 2019. El puntaje máximo teórico varía por proceso (depende de cuántos factores
+              lo afectan), por lo que se expresa en porcentaje relativo para comparabilidad.
+              Un proceso con 100% es el más crítico para este perfil institucional específico.
+              Los puntajes NO son arbitrarios: son el resultado matemático de las fórmulas
+              de ISACA aplicadas a los valores BCRP.
+            </p>
+          </div>
+
+          <div class="insight-box navy" style="margin-top:12px;">
+            <div class="insight-box-label" style="color:var(--navy-500);">Interpretacion correcta</div>
+            <p class="insight-box-text">
+              Un proceso con 40% no significa que "no importa". Significa que, dado el perfil del BCRP,
+              ese proceso tiene menor prioridad relativa. Todos los procesos deben implementarse al menos
+              en Nivel 2 (por ser empresa Grande). Los con mayor puntaje deben llegar a Nivel 3-4.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRÁFICO 40 PROCESOS -->
+  <section class="section section-alt" id="grafico">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">02</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Resultado Canvas</span>
+        </div>
+        <h2 class="section-title">Los 40 Procesos COBIT — Puntaje Canvas</h2>
+        <p class="section-subtitle">
+          Ordenados de mayor a menor puntaje. Los procesos resaltados en dorado forman el núcleo
+          del sistema de gobierno del BCRP. Las barras se animan al entrar en el viewport.
+        </p>
+      </div>
+
+      <!-- Leyenda -->
+      <div class="reveal" style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:24px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:16px; height:16px; border-radius:3px; background:var(--gold-500);"></div>
+          <span style="font-size:.78rem; color:var(--text-secondary);">Top 6 — Procesos Centrales BCRP</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:16px; height:16px; border-radius:3px; background:var(--navy-400);"></div>
+          <span style="font-size:.78rem; color:var(--text-secondary);">Resto de procesos COBIT 2019</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:16px; height:3px; border-radius:3px; background:var(--gold-400); border: 1px dashed var(--gold-400);"></div>
+          <span style="font-size:.78rem; color:var(--text-secondary);">Umbral Top (80%+)</span>
+        </div>
+      </div>
+
+      <div id="chart-processes" style="min-height:1100px;" class="reveal"></div>
+    </div>
+  </section>
+
+  <!-- TOP 6 -->
+  <section class="section" id="top6">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">03</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Procesos Centrales</span>
+        </div>
+        <h2 class="section-title">Los 6 Procesos con Mayor Prioridad</h2>
+        <p class="section-subtitle">
+          Estos son los procesos que el Canvas del Kit ISACA determina como los más críticos
+          para el perfil institucional del BCRP. Cada uno tiene su justificación directa
+          en los factores que más lo amplificaron.
+        </p>
+      </div>
+
+      <div class="table-wrap reveal">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="mono">Proceso</th>
+              <th>Nombre COBIT 2019</th>
+              <th class="center">Canvas %</th>
+              <th class="center">Nivel AS-IS</th>
+              <th class="center">Nivel TO-BE</th>
+              <th>Factores que lo amplifican</th>
+              <th>Razon de prioridad para el BCRP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-highlight">
+              <td class="mono">APO12</td>
+              <td>Gestionar el Riesgo</td>
+              <td class="center"><span class="score-badge high">100%</span></td>
+              <td class="center"><span class="risk-badge high">N2</span></td>
+              <td class="center"><span class="risk-badge low">N4</span></td>
+              <td>DF1, DF2, DF3, DF5, DF6</td>
+              <td>EG02 (riesgos gestionados) obtuvo 6pts en 1ra Cascada. DF3 coloca 3 categorías en criticidad máxima 25/25. El riesgo TI del BCRP es de escala sistémica nacional.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">EDM03</td>
+              <td>Asegurar la Optimización del Riesgo</td>
+              <td class="center"><span class="score-badge high">90%</span></td>
+              <td class="center"><span class="risk-badge very-high">N1</span></td>
+              <td class="center"><span class="risk-badge low">N4</span></td>
+              <td>DF1, DF3, DF5, DF6, DF7</td>
+              <td>Único proceso de gobierno (EDM) que trata el riesgo directamente. Supervisa a APO12 desde el nivel del Directorio. La brecha más grande (de N1 a N4) refleja la urgencia.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">APO13</td>
+              <td>Gestionar la Seguridad de la Información</td>
+              <td class="center"><span class="score-badge high">90%</span></td>
+              <td class="center"><span class="risk-badge high">N2</span></td>
+              <td class="center"><span class="risk-badge low">N4</span></td>
+              <td>DF1, DF3, DF4, DF5, DF6</td>
+              <td>Ciberseguridad en el PETI como brecha activa (DF4). ISO 27001 pendiente (DF6). DF5: 100% amenaza alta. Es el proceso que gestiona el SGSI que el BCRP aún no tiene formalizado.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">DSS05</td>
+              <td>Gestionar los Servicios de Seguridad</td>
+              <td class="center"><span class="score-badge high">90%</span></td>
+              <td class="center"><span class="risk-badge very-high">N1</span></td>
+              <td class="center"><span class="risk-badge low">N4</span></td>
+              <td>DF3, DF4, DF5, DF7</td>
+              <td>Operacionaliza el SGSI de APO13. HSM, MDM, SIEM son herramientas necesarias para este proceso. DF7: el BCRP como Fábrica necesita defensa activa de sus sistemas 24/7.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">DSS04</td>
+              <td>Gestionar la Continuidad</td>
+              <td class="center"><span class="score-badge high">80%</span></td>
+              <td class="center"><span class="risk-badge high">N2</span></td>
+              <td class="center"><span class="risk-badge low">N4</span></td>
+              <td>DF1, DF2, DF3, DF7</td>
+              <td>Solo 2 DCs operativos (sin tercer DC). EG06 (continuidad) obtuvo 7pts en 1ra Cascada. DF7: rol Factory = la continuidad del LBTR no es negociable. Tercer DC es objetivo urgente del PETI.</td>
+            </tr>
+            <tr class="row-highlight">
+              <td class="mono">MEA03</td>
+              <td>Gestionar el Cumplimiento de Requisitos Externos</td>
+              <td class="center"><span class="score-badge high">80%</span></td>
+              <td class="center"><span class="risk-badge high">N2</span></td>
+              <td class="center"><span class="risk-badge low">N4</span></td>
+              <td>DF4, DF5, DF6, DF1</td>
+              <td>DF6: 100% exigencia normativa alta. Constitución Art. 84°, SWIFT CSP, BIS, ISO 27001. El incumplimiento para un banco central tiene consecuencias constitucionales.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Radar de madurez -->
+      <div style="margin-top:48px;">
+        <div class="reveal" style="margin-bottom:16px;">
+          <h3>Mapa de Madurez AS-IS vs TO-BE</h3>
+          <p style="font-size:.85rem; color:var(--text-secondary); margin-top:6px;">
+            Visualización de la brecha entre el nivel actual (AS-IS) y el objetivo (TO-BE) para cada proceso.
+            Las zonas grises son el estado actual, las líneas doradas el objetivo.
+          </p>
+        </div>
+        <div id="chart-maturity" style="max-width:520px; margin:0 auto;" class="reveal"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANÁLISIS POR DOMINIO -->
+  <section class="section section-alt" id="dominios">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">04</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Estructura COBIT</span>
+        </div>
+        <h2 class="section-title">Análisis por Dominio COBIT 2019</h2>
+        <p class="section-subtitle">
+          COBIT 2019 organiza sus 40 procesos en 5 dominios. El Canvas asigna puntajes a todos.
+          El análisis por dominio revela qué áreas del gobierno TI el BCRP debe fortalecer más.
+        </p>
+      </div>
+
+      <div class="grid-2 stagger-group">
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Dominio EDM (5 procesos)</span>
+              <h4 style="margin-top:4px;">Evaluate, Direct and Monitor</h4>
+            </div>
+            <span class="card-code" style="color:var(--risk-very-high); background:#fff0f0;">GOBIERNO</span>
+          </div>
+          <p style="font-size:.8rem; margin-bottom:14px;">El único dominio de gobierno real. Procesos que el Directorio debe ejecutar.</p>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gold-50); padding:7px 12px; border-radius:6px; border:1px solid var(--gold-200);">
+              <span class="mono" style="font-size:.78rem; color:var(--gold-700);">EDM03</span>
+              <span style="font-size:.78rem;">Optimización del Riesgo</span>
+              <span class="score-badge high">90%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">EDM01</span>
+              <span style="font-size:.78rem;">Marco de Gobierno</span>
+              <span class="score-badge s1">70%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">EDM04</span>
+              <span style="font-size:.78rem;">Optimización de Recursos</span>
+              <span class="score-badge s1">65%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">EDM02</span>
+              <span style="font-size:.78rem;">Entrega de Beneficios</span>
+              <span class="score-badge s1">60%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">EDM05</span>
+              <span style="font-size:.78rem;">Transparencia hacia Stakeholders</span>
+              <span class="score-badge s0">50%</span>
+            </div>
+          </div>
+          <div style="margin-top:12px; font-size:.75rem; color:var(--text-secondary); background:var(--navy-50); padding:8px 12px; border-radius:6px;">
+            <strong>Hallazgo clave:</strong> El Directorio del BCRP actualmente no tiene un comité de gobierno TI
+            formal (EDM01 en N1). Esto explica por qué EDM03 a pesar de tener 90% está en N1: sin EDM01, ningún
+            proceso EDM puede funcionar correctamente.
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Dominio APO (14 procesos)</span>
+              <h4 style="margin-top:4px;">Align, Plan and Organize</h4>
+            </div>
+            <span class="card-code" style="color:var(--navy-600); background:var(--navy-50);">GESTIÓN</span>
+          </div>
+          <p style="font-size:.8rem; margin-bottom:14px;">Procesos estratégicos y de planificación TI. El dominio más amplio de COBIT.</p>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gold-50); padding:7px 12px; border-radius:6px; border:1px solid var(--gold-200);">
+              <span class="mono" style="font-size:.78rem; color:var(--gold-700);">APO12</span>
+              <span style="font-size:.78rem;">Gestionar el Riesgo</span>
+              <span class="score-badge high">100%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gold-50); padding:7px 12px; border-radius:6px; border:1px solid var(--gold-200);">
+              <span class="mono" style="font-size:.78rem; color:var(--gold-700);">APO13</span>
+              <span style="font-size:.78rem;">Gestionar la Seguridad</span>
+              <span class="score-badge high">90%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">APO02</span>
+              <span style="font-size:.78rem;">Estrategia TI</span>
+              <span class="score-badge s1">75%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">APO07</span>
+              <span style="font-size:.78rem;">Gestión de Recursos Humanos</span>
+              <span class="score-badge s1">70%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">APO10</span>
+              <span style="font-size:.78rem;">Gestión de Proveedores</span>
+              <span class="score-badge s1">65%</span>
+            </div>
+          </div>
+          <div style="margin-top:8px; font-size:.72rem; color:var(--text-muted); text-align:right;">+ 9 procesos APO más en el Canvas</div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Dominio DSS (6 procesos)</span>
+              <h4 style="margin-top:4px;">Deliver, Service and Support</h4>
+            </div>
+            <span class="card-code" style="color:var(--risk-very-high); background:#fff0f0;">OPERACIONES</span>
+          </div>
+          <p style="font-size:.8rem; margin-bottom:14px;">Procesos operativos TI. El LBTR, SIMC y SWIFT viven en este dominio.</p>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gold-50); padding:7px 12px; border-radius:6px; border:1px solid var(--gold-200);">
+              <span class="mono" style="font-size:.78rem; color:var(--gold-700);">DSS05</span>
+              <span style="font-size:.78rem;">Servicios de Seguridad</span>
+              <span class="score-badge high">90%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gold-50); padding:7px 12px; border-radius:6px; border:1px solid var(--gold-200);">
+              <span class="mono" style="font-size:.78rem; color:var(--gold-700);">DSS04</span>
+              <span style="font-size:.78rem;">Gestionar la Continuidad</span>
+              <span class="score-badge high">80%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">DSS01</span>
+              <span style="font-size:.78rem;">Gestionar Operaciones</span>
+              <span class="score-badge s1">70%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">DSS02</span>
+              <span style="font-size:.78rem;">Gestionar Solicitudes e Incidentes</span>
+              <span class="score-badge s1">60%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">DSS03</span>
+              <span style="font-size:.78rem;">Gestionar Problemas</span>
+              <span class="score-badge s1">55%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">DSS06</span>
+              <span style="font-size:.78rem;">Gestionar Controles de Procesos</span>
+              <span class="score-badge s0">50%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Dominios BAI y MEA</span>
+              <h4 style="margin-top:4px;">Build, Acquire, Implement · Monitor, Evaluate, Assess</h4>
+            </div>
+          </div>
+          <p style="font-size:.8rem; margin-bottom:14px;">
+            BAI (11 procesos): adquisición, desarrollo e implementación de soluciones.
+            MEA (4 procesos): monitoreo, evaluación y cumplimiento.
+          </p>
+          <div style="margin-bottom:10px; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted);">MEA — Destacados</div>
+          <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gold-50); padding:7px 12px; border-radius:6px; border:1px solid var(--gold-200);">
+              <span class="mono" style="font-size:.78rem; color:var(--gold-700);">MEA03</span>
+              <span style="font-size:.78rem;">Cumplimiento Externo</span>
+              <span class="score-badge high">80%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">MEA01</span>
+              <span style="font-size:.78rem;">Rendimiento y Conformidad</span>
+              <span class="score-badge s1">70%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">MEA02</span>
+              <span style="font-size:.78rem;">Sistema de Control Interno</span>
+              <span class="score-badge s1">65%</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom:10px; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted);">BAI — Destacados</div>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">BAI06</span>
+              <span style="font-size:.78rem;">Gestionar Cambios</span>
+              <span class="score-badge s1">70%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; background:var(--gray-50); padding:7px 12px; border-radius:6px;">
+              <span class="mono" style="font-size:.78rem;">BAI01</span>
+              <span style="font-size:.78rem;">Gestionar Programas</span>
+              <span class="score-badge s1">65%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AJUSTE MEA01 -->
+  <section class="section" id="mea01">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">05</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Ajuste razonado</span>
+        </div>
+        <h2 class="section-title">El Caso MEA01 — Un Ajuste Deliberado</h2>
+      </div>
+
+      <div class="grid-2 stagger-group">
+        <div class="reveal">
+          <p style="font-size:.88rem; line-height:1.75; margin-bottom:20px;">
+            El Canvas del Kit ISACA sugirió para MEA01 un nivel de capacidad de <strong>2 (Managed)</strong>
+            como objetivo. El equipo lo ajustó a <strong>3 (Defined)</strong>. Este fue el único ajuste
+            realizado sobre el resultado automático del Canvas, y está completamente documentado y justificado.
+          </p>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Proceso</th>
+                  <th class="center">Canvas sugiere</th>
+                  <th class="center">Equipo decide</th>
+                  <th>Justificacion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono"><strong>MEA01</strong></td>
+                  <td class="center"><span class="risk-badge high">N2</span></td>
+                  <td class="center"><span class="risk-badge low">N3</span></td>
+                  <td style="color:var(--gold-700); font-weight:600;">Justificación en columna de nota</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="card card-highlight">
+            <h4 style="margin-bottom:12px;">Por que se ajusto MEA01 de N2 a N3</h4>
+            <p style="font-size:.82rem; line-height:1.65; margin-bottom:16px;">
+              MEA01 es el proceso que mide el rendimiento y la conformidad de todos los demás procesos.
+              Es el "semáforo" del sistema de gobierno TI.
+            </p>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; gap:10px;">
+                <div style="width:4px; border-radius:2px; background:var(--risk-very-high); flex-shrink:0;"></div>
+                <div>
+                  <div style="font-size:.78rem; font-weight:700; margin-bottom:3px;">Problema si queda en N2</div>
+                  <div style="font-size:.75rem; color:var(--text-secondary);">En N2, los KPIs de los 6 procesos centrales no estarían formalizados. El Directorio no podría medir el avance del EGIT. El sistema de gobierno sería opaco para quien debe supervisarlo.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <div style="width:4px; border-radius:2px; background:var(--risk-low); flex-shrink:0;"></div>
+                <div>
+                  <div style="font-size:.78rem; font-weight:700; margin-bottom:3px;">Beneficio de N3</div>
+                  <div style="font-size:.75rem; color:var(--text-secondary);">En N3, los KPIs de todos los procesos están definidos, son medibles y se reportan periódicamente al Directorio. Esto habilita la evaluación del sistema completo de gobierno TI.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <div style="width:4px; border-radius:2px; background:var(--gold-500); flex-shrink:0;"></div>
+                <div>
+                  <div style="font-size:.78rem; font-weight:700; margin-bottom:3px;">Regla adoptada</div>
+                  <div style="font-size:.75rem; color:var(--text-secondary);">Un sistema de gobierno TI que no se mide, no funciona. MEA01 es la precondición para que cualquier otro proceso del EGIT demuestre que está avanzando. Sin medición en N3, los otros 6 procesos no pueden certificar su mejora.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERIFICACION CONVERGENCIA -->
+  <section class="section section-alt" id="convergencia">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">06</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Validacion cruzada</span>
+        </div>
+        <h2 class="section-title">Verificación de Consistencia — Cascada vs Canvas</h2>
+        <p class="section-subtitle">
+          La prueba más importante del proyecto: demostrar que dos metodologías completamente distintas,
+          aplicadas independientemente sobre la misma evidencia institucional, llegan al mismo resultado.
+        </p>
+      </div>
+
+      <div class="convergence-diagram reveal">
+        <div class="convergence-tool">
+          <div class="convergence-tool-label">Herramienta 1 — Desarrollada por el equipo</div>
+          <div class="convergence-tool-name">Modelo en Cascada Manual</div>
+          <div class="convergence-steps">
+            <div class="convergence-step">5 OBJ BCRP → Matriz 5×13 → 7 EG priorizadas</div>
+            <div class="convergence-step">7 EG → Matriz 7×13 → 8 AG priorizadas</div>
+            <div class="convergence-step">8 AG → Matriz 8×40 → Top 10 procesos</div>
+            <div class="convergence-step"><strong>Corte: puntaje ≥ 8 → 6 procesos centrales</strong></div>
+            <div class="convergence-step" style="font-weight:700; color:var(--navy-900);">DSS05 · DSS04 · APO13 · APO12 · EDM03 · MEA03</div>
+          </div>
+        </div>
+
+        <div class="convergence-center">
+          <div class="convergence-arrow">
+            <div style="font-size:.65rem; color:var(--text-muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px; text-align:center;">Ambas</div>
+            <div style="font-size:.65rem; color:var(--text-muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; text-align:center;">coinciden</div>
+            <div class="convergence-arrow-line"></div>
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--gold-500); display:flex; align-items:center; justify-content:center; margin:0 auto;">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4.5 4.5 7.5-8" stroke="#0a1628" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="convergence-arrow-line"></div>
+            <div style="font-size:.65rem; color:var(--text-muted); letter-spacing:.1em; text-transform:uppercase; margin-top:12px; text-align:center;">mismos</div>
+            <div style="font-size:.65rem; color:var(--text-muted); letter-spacing:.1em; text-transform:uppercase; text-align:center;">6 procesos</div>
+          </div>
+        </div>
+
+        <div class="convergence-tool">
+          <div class="convergence-tool-label">Herramienta 2 — Kit Oficial ISACA</div>
+          <div class="convergence-tool-name">Canvas VI Cuadro Resumen</div>
+          <div class="convergence-steps">
+            <div class="convergence-step">DF1-DF11 ingresados con evidencia BCRP</div>
+            <div class="convergence-step">Fórmulas ISACA calculan los 40 procesos</div>
+            <div class="convergence-step">Columna "Concluded Scope" = puntaje final</div>
+            <div class="convergence-step"><strong>Corte: puntuación ≥ 80% → 6 procesos centrales</strong></div>
+            <div class="convergence-step" style="font-weight:700; color:var(--navy-900);">APO12 · EDM03 · APO13 · DSS05 · DSS04 · MEA03</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla de comparación proceso a proceso -->
+      <div class="reveal mt-8">
+        <h3 style="margin-bottom:16px;">Comparacion proceso a proceso</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="mono">Proceso</th>
+                <th>Nombre</th>
+                <th class="center">Rk. Cascada</th>
+                <th class="center">Pts. Cascada</th>
+                <th class="center">Rk. Canvas</th>
+                <th class="center">% Canvas</th>
+                <th class="center">Nivel final</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-highlight">
+                <td class="mono">DSS05</td>
+                <td>Gestionar Servicios de Seguridad</td>
+                <td class="center"><span class="score-badge high">#1</span></td>
+                <td class="center">14/16</td>
+                <td class="center"><span class="score-badge s1">#2</span></td>
+                <td class="center">90%</td>
+                <td class="center"><strong>4</strong></td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">DSS04</td>
+                <td>Gestionar la Continuidad</td>
+                <td class="center"><span class="score-badge high">#2</span></td>
+                <td class="center">12/16</td>
+                <td class="center"><span class="score-badge s1">#5</span></td>
+                <td class="center">80%</td>
+                <td class="center"><strong>4</strong></td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">APO13</td>
+                <td>Gestionar la Seguridad</td>
+                <td class="center"><span class="score-badge high">#2</span></td>
+                <td class="center">12/16</td>
+                <td class="center"><span class="score-badge s1">#2</span></td>
+                <td class="center">90%</td>
+                <td class="center"><strong>4</strong></td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">APO12</td>
+                <td>Gestionar el Riesgo</td>
+                <td class="center"><span class="score-badge s1">#4</span></td>
+                <td class="center">10/16</td>
+                <td class="center"><span class="score-badge high">#1</span></td>
+                <td class="center">100%</td>
+                <td class="center"><strong>4</strong></td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">EDM03</td>
+                <td>Asegurar Optimización del Riesgo</td>
+                <td class="center"><span class="score-badge s1">#5</span></td>
+                <td class="center">9/16</td>
+                <td class="center"><span class="score-badge s1">#2</span></td>
+                <td class="center">90%</td>
+                <td class="center"><strong>4</strong></td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">MEA03</td>
+                <td>Cumplimiento de Requisitos Externos</td>
+                <td class="center"><span class="score-badge s1">#6</span></td>
+                <td class="center">8/16</td>
+                <td class="center"><span class="score-badge s1">#5</span></td>
+                <td class="center">80%</td>
+                <td class="center"><strong>4</strong></td>
+              </tr>
+              <tr>
+                <td class="mono">MEA01</td>
+                <td>Rendimiento y Conformidad</td>
+                <td class="center">#7</td>
+                <td class="center">6/16</td>
+                <td class="center">#7</td>
+                <td class="center">70%</td>
+                <td class="center" style="color:var(--gold-700);">3 *</td>
+              </tr>
+              <tr>
+                <td class="mono">APO02</td>
+                <td>Estrategia TI</td>
+                <td class="center">#8</td>
+                <td class="center">6/16</td>
+                <td class="center">#7</td>
+                <td class="center">75%</td>
+                <td class="center">3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:.75rem; color:var(--text-muted); margin-top:8px;">* MEA01 ajustado de N2 sugerido a N3 por decisión razonada del equipo (ver sección anterior).</p>
+      </div>
+
+      <div class="insight-box critical reveal mt-6">
+        <div class="insight-box-label">Conclusion metodologica</div>
+        <p class="insight-box-text">
+          Los 6 procesos que encabezan la Cascada son los mismos que encabezan el Canvas.
+          El orden interno varía ligeramente (APO12 pasa de #4 en Cascada a #1 en Canvas),
+          pero el conjunto es idéntico. Esta convergencia no fue manipulada:
+          es el resultado natural de que ambas herramientas procesan la misma realidad institucional
+          del BCRP documentada en el PETI y el Plan Estratégico.
+          La diferencia en el ranking interno es esperable: el Canvas pondera 11 factores simultáneamente,
+          mientras que la Cascada solo usa los objetivos estratégicos.
+          APO12 sube al #1 en el Canvas porque los factores DF3 y DF5 (riesgo y amenazas)
+          lo amplifican fuertemente, algo que la Cascada no captura directamente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--navy-900); color:var(--navy-300); padding:24px 48px; border-top:1px solid var(--navy-700);">
+    <div style="max-width:var(--content-max); margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="font-size:.78rem;">BCRP · COBIT® 2019 · Universidad Peruana Unión · 2025</div>
+      <div style="display:flex; gap:16px;">
+        <a href="factores.html" style="font-size:.78rem; color:var(--gold-400);">← 11 Factores</a>
+        <a href="index.html"    style="font-size:.78rem; color:var(--gold-400);">← Inicio</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<button id="back-to-top" style="position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--navy-800);border:1px solid var(--navy-600);display:flex;align-items:center;justify-content:center;z-index:50;opacity:0;transition:opacity .3s;cursor:pointer;" aria-label="Volver al inicio">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 8l4-4 4 4" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/></svg>
+</button>
+
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+<script src="../js/charts.js"></script>
+</body>
+</html>

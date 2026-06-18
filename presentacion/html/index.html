@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCRP · Diseño del Sistema de Gobierno de TI · COBIT 2019</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+<!-- ========== OVERLAY MÓVIL ========== -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- ========== HEADER MÓVIL ========== -->
+<header class="mobile-header">
+  <span class="mobile-logo">BCRP · COBIT 2019</span>
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ========== BARRA DE PROGRESO ========== -->
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress-bar"></div>
+</div>
+
+<!-- ========== SIDEBAR ========== -->
+<nav class="sidebar" id="sidebar" aria-label="Navegación principal">
+  <div class="sidebar-brand">
+    <span class="sidebar-brand-label">COBIT® 2019</span>
+    <div class="sidebar-brand-title">Gobierno de TI</div>
+    <div class="sidebar-brand-sub">Banco Central de Reserva del Perú</div>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="sidebar-nav-group">
+      <span class="sidebar-nav-group-label">Contenido</span>
+    </div>
+    <a href="#hero"         class="sidebar-nav-item active" data-section="hero">
+      <span class="sidebar-nav-num">00</span> Inicio
+    </a>
+    <a href="#contexto"     class="sidebar-nav-item" data-section="contexto">
+      <span class="sidebar-nav-num">01</span> Contexto Institucional
+    </a>
+    <a href="#fases"        class="sidebar-nav-item" data-section="fases">
+      <span class="sidebar-nav-num">02</span> Las 4 Fases
+    </a>
+    <a href="#cascada"      class="sidebar-nav-item" data-section="cascada">
+      <span class="sidebar-nav-num">03</span> Modelo Cascada
+    </a>
+    <a href="#factores"     class="sidebar-nav-item" data-section="factores">
+      <span class="sidebar-nav-num">04</span> 11 Factores de Diseño
+    </a>
+    <a href="#canvas"       class="sidebar-nav-item" data-section="canvas">
+      <span class="sidebar-nav-num">05</span> Canvas y 40 Procesos
+    </a>
+    <a href="#procesos"     class="sidebar-nav-item" data-section="procesos">
+      <span class="sidebar-nav-num">06</span> Los 6 Procesos
+    </a>
+    <a href="#componentes"  class="sidebar-nav-item" data-section="componentes">
+      <span class="sidebar-nav-num">07</span> Los 7 Componentes
+    </a>
+    <a href="#conclusiones" class="sidebar-nav-item" data-section="conclusiones">
+      <span class="sidebar-nav-num">08</span> Conclusiones
+    </a>
+
+    <div class="sidebar-nav-group" style="margin-top: 16px;">
+      <span class="sidebar-nav-group-label">Páginas de detalle</span>
+    </div>
+    <a href="factores.html"  class="sidebar-nav-item">
+      <span class="sidebar-nav-num">—</span> 11 Factores en detalle
+    </a>
+    <a href="canvas.html"    class="sidebar-nav-item">
+      <span class="sidebar-nav-num">—</span> Canvas completo
+    </a>
+  </div>
+
+  <div class="sidebar-footer">
+    <p class="sidebar-footer-text">
+      Universidad Peruana Unión<br>
+      Ingeniería de Sistemas · IX Ciclo<br>
+      Docente: Ing. Rick Armando Ccapa Luque
+    </p>
+  </div>
+</nav>
+
+<!-- ========== CONTENIDO PRINCIPAL ========== -->
+<main class="main-content">
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-eyebrow animate-fade-down">
+        <span class="hero-badge">Universidad Peruana Unión · 2025</span>
+        <span class="hero-line"></span>
+      </div>
+
+      <h1 class="hero-title animate-fade-up delay-100">
+        Diseño del Sistema<br>de <em>Gobierno de TI</em>
+      </h1>
+
+      <p class="hero-subtitle animate-fade-up delay-200">
+        Aplicación del marco COBIT® 2019 al Banco Central de Reserva del Perú,
+        integrando el Modelo en Cascada y el Kit de Diseño oficial de ISACA para
+        priorizar los procesos de gobierno con evidencia institucional verificable.
+      </p>
+
+      <div class="hero-meta animate-fade-up delay-300">
+        <div class="hero-meta-item">
+          <div class="hero-meta-item-label">Marco</div>
+          <div class="hero-meta-item-value">COBIT® 2019 — ISACA</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-item-label">Institución</div>
+          <div class="hero-meta-item-value">BCRP — Art. 84° Const.</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-item-label">Entregable</div>
+          <div class="hero-meta-item-value">VI Cuadro Resumen · Kit ISACA</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <div class="hero-scroll-cue-line"></div>
+      <span>Explorar</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       01 — CONTEXTO INSTITUCIONAL
+       ============================================ -->
+  <section class="section" id="contexto">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">01</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Contexto</span>
+        </div>
+        <h2 class="section-title">Contexto Institucional del BCRP</h2>
+        <p class="section-subtitle">
+          El proyecto parte de dos documentos oficiales del Banco: el Plan Estratégico 2022-2026 y el
+          Plan Estratégico de Tecnologías de Información (PETI) 2022-2026. Toda cifra y decisión
+          del proyecto está respaldada por evidencia textual de estos documentos.
+        </p>
+      </div>
+
+      <!-- Perfil del BCRP -->
+      <div class="grid-2 stagger-group mt-8">
+        <div class="card card-navy reveal">
+          <div style="margin-bottom: 16px;">
+            <span class="text-label">Institución</span>
+            <h3 style="color:var(--white); font-size:1.4rem; margin-top:8px;">
+              Banco Central de Reserva del Perú
+            </h3>
+          </div>
+          <p style="color:var(--navy-200); font-size:.85rem; line-height:1.7;">
+            Entidad pública autónoma regulada por el <strong style="color:var(--gold-400);">Art. 84° de la Constitución Política del Perú</strong>.
+            Misión constitucional: preservar la estabilidad monetaria.
+            Opera sistemas críticos nacionales: LBTR, SIMC y SWIFT.
+          </p>
+          <div style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,.08);">
+            <div class="text-label" style="margin-bottom:8px;">Visión</div>
+            <p style="color:var(--navy-200); font-size:.8rem; font-style:italic; line-height:1.6;">
+              Banco central autónomo, moderno, modelo de institucionalidad, de primer nivel internacional.
+            </p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h4>Gerencia de Tecnologías de Información (GTI)</h4>
+          <p style="font-size:.85rem; margin-top:8px; margin-bottom:16px;">
+            Área estratégica de soporte, dependiente de la Gerencia General. Habilitadora de todos los procesos misionales del Banco.
+          </p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="background:var(--gray-50); border:1px solid var(--border-color); border-radius:8px; padding:10px 14px;">
+              <div style="font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px;">Unidades</div>
+              <div style="font-size:.78rem; color:var(--text-secondary); line-height:1.6;">
+                Infraestructura y Data Centers · Seguridad de la Información · Desarrollo de Sistemas ·
+                Soporte Técnico · Datos y Analítica
+              </div>
+            </div>
+            <div style="background:var(--navy-50); border:1px solid var(--navy-100); border-radius:8px; padding:10px 14px;">
+              <div style="font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--navy-500); margin-bottom:4px;">Sistemas críticos</div>
+              <div style="display:flex; gap:6px; flex-wrap:wrap;">
+                <span class="process-chip">LBTR</span>
+                <span class="process-chip">SIMC</span>
+                <span class="process-chip">SWIFT</span>
+                <span class="process-chip">HSM</span>
+                <span class="process-chip">SIEM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 OE seleccionados -->
+      <div style="margin-top: 40px;">
+        <div class="reveal" style="margin-bottom:20px;">
+          <h3 style="font-size:1.25rem;">Los 5 Objetivos Estratégicos con componente TI</h3>
+          <p style="font-size:.85rem; color:var(--text-secondary); margin-top:8px;">
+            De los 14 OE del Plan Estratégico BCRP 2022-2026, el equipo seleccionó los 5 con relación directa
+            y verificable con la función de Tecnologías de Información. Son la base de todo el Modelo en Cascada.
+          </p>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="mono">Código</th>
+                <th>Objetivo Estratégico (texto literal del Plan BCRP)</th>
+                <th>Eje Estratégico</th>
+                <th>Relación con TI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-highlight">
+                <td class="mono">OE4</td>
+                <td>Promover la estabilidad financiera y sistemas de pagos eficientes y competitivos</td>
+                <td>I — Estabilidad Monetaria y Financiera</td>
+                <td>LBTR, SIMC, SWIFT — pagos interbancarios 24/7</td>
+              </tr>
+              <tr>
+                <td class="mono">OE10</td>
+                <td>Contar con desarrollos informáticos y servicios de tecnologías que impulsen la innovación</td>
+                <td>IV — Procesos, Infraestructura e Información</td>
+                <td>Tercer DC, big data, ciberseguridad, herramientas colaborativas</td>
+              </tr>
+              <tr>
+                <td class="mono">OE14</td>
+                <td>Desplegar la gestión de riesgos a todos los procesos del Banco</td>
+                <td>IV — Procesos, Infraestructura e Información</td>
+                <td>ISO 27001, BIS, SWIFT CSP, EGIT formal bajo COBIT</td>
+              </tr>
+              <tr>
+                <td class="mono">OE1 / OE5</td>
+                <td>Mantener la inflación en el rango meta / Gestión eficiente de reservas internacionales</td>
+                <td>I — Estabilidad Monetaria y Financiera</td>
+                <td>Big data, datamarts, IA para política monetaria y reservas</td>
+              </tr>
+              <tr>
+                <td class="mono">OE9</td>
+                <td>Crear condiciones para atraer y retener talento profesional</td>
+                <td>III — Talento Humano</td>
+                <td>Office 365, Intranet colaborativa, GESCON, conocimiento institucional</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="insight-box reveal mt-6">
+          <div class="insight-box-label">Por que estos 5 y no todos</div>
+          <p class="insight-box-text">
+            Los OE restantes (OE3 sobre reformas económicas, OE6 sobre calidad del circulante, OE7-OE8 sobre comunicaciones y asesoría legal) no tienen componente tecnológico relevante como insumo directo para un sistema de gobierno de TI. La exclusión fue deliberada y documentada por el equipo para mantener la trazabilidad del modelo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       02 — LAS 4 FASES
+       ============================================ -->
+  <section class="section" id="fases">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">02</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Ciclo de Vida</span>
+        </div>
+        <h2 class="section-title">Las 4 Fases del Proyecto</h2>
+        <p class="section-subtitle">
+          El ciclo de vida COBIT 2019 se estructura en fases consecutivas. Cada fase alimenta
+          a la siguiente: los impulsores definen el diagnóstico, el diagnóstico justifica las metas,
+          y las metas determinan qué procesos deben diseñarse.
+        </p>
+      </div>
+
+      <!-- Timeline de fases -->
+      <div class="phase-timeline reveal stagger-group">
+        <div class="phase-item reveal">
+          <div class="phase-dot"><span class="phase-dot-num">1</span></div>
+          <div class="phase-content">
+            <div class="phase-label">Fase 1</div>
+            <div class="phase-title">Cuales son los Impulsores</div>
+            <p class="phase-desc">Identifica los problemas, riesgos, necesidades y oportunidades que justifican el sistema de gobierno de TI.</p>
+            <div class="phase-tags">
+              <span class="phase-tag">LBTR obsoleto</span>
+              <span class="phase-tag">Sin 3er DC</span>
+              <span class="phase-tag">Ciberseguridad</span>
+              <span class="phase-tag">CBDC</span>
+              <span class="phase-tag">Sin EGIT formal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-item reveal">
+          <div class="phase-dot"><span class="phase-dot-num">2</span></div>
+          <div class="phase-content">
+            <div class="phase-label">Fase 2</div>
+            <div class="phase-title">Donde estamos (AS-IS)</div>
+            <p class="phase-desc">Diagnóstico de la situación actual evaluando 5 dimensiones con evidencia del PETI BCRP.</p>
+            <div class="phase-tags">
+              <span class="phase-tag">Nivel 2 general</span>
+              <span class="phase-tag">Brechas ALTA</span>
+              <span class="phase-tag">PETI verificado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-item reveal">
+          <div class="phase-dot"><span class="phase-dot-num">3</span></div>
+          <div class="phase-content">
+            <div class="phase-label">Fase 3</div>
+            <div class="phase-title">Adonde queremos estar (TO-BE)</div>
+            <p class="phase-desc">Define el estado deseado, el análisis GAP y la hoja de ruta de implementación para el BCRP.</p>
+            <div class="phase-tags">
+              <span class="phase-tag">Meta Nivel 3</span>
+              <span class="phase-tag">ISO 27001</span>
+              <span class="phase-tag">3 DCs</span>
+              <span class="phase-tag">EGIT formal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-item reveal">
+          <div class="phase-dot" style="border-color:var(--gold-500); background:var(--gold-100);"><span class="phase-dot-num" style="color:var(--gold-700);">4</span></div>
+          <div class="phase-content">
+            <div class="phase-label" style="color:var(--gold-600);">Fase 4 — Entregable</div>
+            <div class="phase-title">Que debe hacerse</div>
+            <p class="phase-desc">Diseño del Sistema de Gobierno usando el Modelo Cascada y los 11 Factores del Kit ISACA.</p>
+            <div class="phase-tags">
+              <span class="phase-tag" style="background:var(--gold-100); color:var(--gold-700); border-color:var(--gold-300);">Cascada 3 niveles</span>
+              <span class="phase-tag" style="background:var(--gold-100); color:var(--gold-700); border-color:var(--gold-300);">11 Factores</span>
+              <span class="phase-tag" style="background:var(--gold-100); color:var(--gold-700); border-color:var(--gold-300);">Canvas ISACA</span>
+              <span class="phase-tag" style="background:var(--gold-100); color:var(--gold-700); border-color:var(--gold-300);">6 Procesos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagnóstico AS-IS -->
+      <div style="margin-top:56px;">
+        <div class="reveal" style="margin-bottom:20px;">
+          <h3>Diagnóstico AS-IS — Nivel de Madurez por Dimensión</h3>
+          <p style="font-size:.85rem; color:var(--text-secondary); margin-top:6px;">
+            El PETI BCRP 2022-2026 documenta 8 brechas de capacidad TI: 4 de nivel ALTA y 4 de nivel MEDIA.
+            El nivel global se estableció en <strong>Nivel 2 (Gestionado)</strong>.
+          </p>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Dimensión</th>
+                <th>Nivel Actual</th>
+                <th>Nivel Meta</th>
+                <th>Brecha Principal</th>
+                <th>Evidencia PETI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Procesos de TI (LBTR, SIMC)</td>
+                <td><span class="risk-badge high">Nivel 2</span></td>
+                <td><span class="risk-badge low">Nivel 3</span></td>
+                <td>Tecnología desactualizada en sistemas de pagos críticos</td>
+                <td>PETI p. 8 — brecha ALTA</td>
+              </tr>
+              <tr>
+                <td>Estructura y Gobierno (EGIT)</td>
+                <td><span class="risk-badge very-high">Nivel 1-2</span></td>
+                <td><span class="risk-badge low">Nivel 3</span></td>
+                <td>Sin Sistema Formal de Gobierno de TI bajo COBIT 2019</td>
+                <td>PETI p. 1 — gobernanza estructurada</td>
+              </tr>
+              <tr>
+                <td>Tecnología e Infraestructura</td>
+                <td><span class="risk-badge high">Nivel 2-3</span></td>
+                <td><span class="risk-badge low">Nivel 3</span></td>
+                <td>Solo 2 data centers, sin redundancia geográfica plena</td>
+                <td>PETI p. 9 — brecha ALTA</td>
+              </tr>
+              <tr>
+                <td>Seguridad y Control</td>
+                <td><span class="risk-badge high">Nivel 2</span></td>
+                <td><span class="risk-badge low">Nivel 3</span></td>
+                <td>Controles básicos sin defensa activa (HSM, MDM, SIEM)</td>
+                <td>PETI p. 9 — brecha ALTA</td>
+              </tr>
+              <tr>
+                <td>Monitoreo y Evaluación</td>
+                <td><span class="risk-badge very-high">Nivel 1-2</span></td>
+                <td><span class="risk-badge low">Nivel 3</span></td>
+                <td>Sin KPIs formales del EGIT reportados al Directorio</td>
+                <td>OE14 — Plan Estratégico</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       03 — MODELO CASCADA
+       ============================================ -->
+  <section class="section" id="cascada">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">03</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Metodología</span>
+        </div>
+        <h2 class="section-title">El Modelo en Cascada</h2>
+        <p class="section-subtitle">
+          El mecanismo que traduce las necesidades institucionales del BCRP en procesos COBIT concretos.
+          Opera en 3 niveles consecutivos usando matrices de relación con escala 0-1-2, donde
+          cada nivel filtra y prioriza para alimentar al siguiente.
+        </p>
+      </div>
+
+      <!-- Escala -->
+      <div class="reveal" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px;">
+        <div style="display:flex; align-items:center; gap:8px; background:var(--gray-50); padding:8px 14px; border-radius:8px; border:1px solid var(--border-color);">
+          <span class="score-badge s0">0</span>
+          <span style="font-size:.78rem; color:var(--text-secondary);">Sin relación entre los elementos</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; background:var(--gray-50); padding:8px 14px; border-radius:8px; border:1px solid var(--border-color);">
+          <span class="score-badge s1">1</span>
+          <span style="font-size:.78rem; color:var(--text-secondary);">Relación secundaria o indirecta</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; background:var(--gray-50); padding:8px 14px; border-radius:8px; border:1px solid var(--border-color);">
+          <span class="score-badge s2">2</span>
+          <span style="font-size:.78rem; color:var(--text-secondary);">Relación primaria o directa</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; background:var(--navy-50); padding:8px 14px; border-radius:8px; border:1px solid var(--navy-100);">
+          <span class="score-badge high">≥ 6</span>
+          <span style="font-size:.78rem; color:var(--text-secondary);">Umbral de prioridad Alta (sobre máximo posible de 10)</span>
+        </div>
+      </div>
+
+      <!-- Flujo visual -->
+      <div class="cascade-flow reveal">
+        <!-- NIVEL 1: OBJ BCRP -->
+        <div class="cascade-column">
+          <div class="cascade-col-header">
+            <span class="cascade-col-num">Punto de partida</span>
+            <div class="cascade-col-title">5 Objetivos Institucionales BCRP</div>
+          </div>
+          <div class="cascade-col-body">
+            <div class="cascade-item highlighted"><span class="cascade-item-code">OE4</span><span class="cascade-item-label">Estabilidad financiera y pagos</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">OE10</span><span class="cascade-item-label">Desarrollos informáticos innovadores</span></div>
+            <div class="cascade-item"><span class="cascade-item-code">OE14</span><span class="cascade-item-label">Gestión de riesgos en todos los procesos</span></div>
+            <div class="cascade-item"><span class="cascade-item-code">OE1/OE5</span><span class="cascade-item-label">Inflación en rango meta y reservas</span></div>
+            <div class="cascade-item"><span class="cascade-item-code">OE9</span><span class="cascade-item-label">Atraer y retener talento</span></div>
+          </div>
+        </div>
+
+        <!-- Arrow 1 -->
+        <div class="cascade-arrow">
+          <div class="cascade-arrow-line"></div>
+          <div style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:var(--navy-800);border-radius:50%;border:2px solid var(--gold-500);">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6h8M6 2l4 4-4 4" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="cascade-arrow-line"></div>
+          <div style="font-size:.58rem; color:var(--text-muted); text-align:center; padding:4px; max-width:44px; line-height:1.3;">Matriz 5×13</div>
+        </div>
+
+        <!-- NIVEL 1 RESULTADO: EG -->
+        <div class="cascade-column">
+          <div class="cascade-col-header">
+            <span class="cascade-col-num">1ra Cascada · 7 priorizadas</span>
+            <div class="cascade-col-title">Metas Corporativas COBIT</div>
+          </div>
+          <div class="cascade-col-body">
+            <div class="cascade-item highlighted"><span class="cascade-item-code">EG08</span><span class="cascade-item-label">Optimización procesos internos</span><span class="cascade-item-score gold">8</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">EG06</span><span class="cascade-item-label">Continuidad y disponibilidad</span><span class="cascade-item-score gold">7</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">EG12</span><span class="cascade-item-label">Transformación digital</span><span class="cascade-item-score gold">7</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">EG02</span><span class="cascade-item-label">Riesgos de negocio gestionados</span><span class="cascade-item-score gold">6</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">EG07</span><span class="cascade-item-label">Calidad de información gerencial</span><span class="cascade-item-score gold">6</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">EG11</span><span class="cascade-item-label">Cumplimiento políticas internas</span><span class="cascade-item-score gold">6</span></div>
+            <div class="cascade-item"><span class="cascade-item-code">EG03</span><span class="cascade-item-label">Cumplimiento leyes externas</span><span class="cascade-item-score">3</span></div>
+          </div>
+        </div>
+
+        <!-- Arrow 2 -->
+        <div class="cascade-arrow">
+          <div class="cascade-arrow-line"></div>
+          <div style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:var(--navy-800);border-radius:50%;border:2px solid var(--gold-500);">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6h8M6 2l4 4-4 4" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="cascade-arrow-line"></div>
+          <div style="font-size:.58rem; color:var(--text-muted); text-align:center; padding:4px; max-width:44px; line-height:1.3;">Matriz 7×13</div>
+        </div>
+
+        <!-- NIVEL 2 RESULTADO: AG -->
+        <div class="cascade-column">
+          <div class="cascade-col-header">
+            <span class="cascade-col-num">2da Cascada · 8 priorizadas</span>
+            <div class="cascade-col-title">Metas de Alineación TI</div>
+          </div>
+          <div class="cascade-col-body">
+            <div class="cascade-item highlighted"><span class="cascade-item-code">AG07</span><span class="cascade-item-label">Seguridad de la información</span><span class="cascade-item-score gold">11</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">AG08</span><span class="cascade-item-label">Integración de aplicaciones</span><span class="cascade-item-score gold">11</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">AG05</span><span class="cascade-item-label">Servicios TI alineados al negocio</span><span class="cascade-item-score gold">10</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">AG06</span><span class="cascade-item-label">Agilidad en soluciones</span><span class="cascade-item-score gold">10</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">AG09</span><span class="cascade-item-label">Programas en tiempo y calidad</span><span class="cascade-item-score gold">9</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code">AG11</span><span class="cascade-item-label">Cumplimiento políticas TI</span><span class="cascade-item-score gold">9</span></div>
+            <div class="cascade-item"><span class="cascade-item-code">AG02</span><span class="cascade-item-label">Riesgos TI gestionados</span><span class="cascade-item-score">8</span></div>
+            <div class="cascade-item"><span class="cascade-item-code">AG12</span><span class="cascade-item-label">Personal competente y motivado</span><span class="cascade-item-score">7</span></div>
+          </div>
+        </div>
+
+        <!-- Arrow 3 -->
+        <div class="cascade-arrow">
+          <div class="cascade-arrow-line"></div>
+          <div style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:var(--gold-500);border-radius:50%;border:2px solid var(--gold-400);">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6h8M6 2l4 4-4 4" stroke="#0a1628" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="cascade-arrow-line"></div>
+          <div style="font-size:.58rem; color:var(--text-muted); text-align:center; padding:4px; max-width:44px; line-height:1.3;">Matriz 8×40</div>
+        </div>
+
+        <!-- NIVEL 3 RESULTADO: Procesos -->
+        <div class="cascade-column" style="border:2px solid var(--gold-400);">
+          <div class="cascade-col-header" style="background:var(--gold-600);">
+            <span class="cascade-col-num" style="color:rgba(255,255,255,.7);">3ra Cascada · Top 6</span>
+            <div class="cascade-col-title">Procesos COBIT Priorizados</div>
+          </div>
+          <div class="cascade-col-body">
+            <div class="cascade-item highlighted"><span class="cascade-item-code" style="color:var(--gold-600);">DSS05</span><span class="cascade-item-label">Servicios de Seguridad</span><span class="cascade-item-score gold">14</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code" style="color:var(--gold-600);">DSS04</span><span class="cascade-item-label">Gestionar la Continuidad</span><span class="cascade-item-score gold">12</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code" style="color:var(--gold-600);">APO13</span><span class="cascade-item-label">Gestionar la Seguridad</span><span class="cascade-item-score gold">12</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code" style="color:var(--gold-600);">APO12</span><span class="cascade-item-label">Gestionar el Riesgo</span><span class="cascade-item-score gold">10</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code" style="color:var(--gold-600);">EDM03</span><span class="cascade-item-label">Optimización del Riesgo</span><span class="cascade-item-score gold">9</span></div>
+            <div class="cascade-item highlighted"><span class="cascade-item-code" style="color:var(--gold-600);">MEA03</span><span class="cascade-item-label">Cumplimiento Requisitos Ext.</span><span class="cascade-item-score gold">8</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="insight-box reveal mt-8">
+        <div class="insight-box-label">Por que AG07 y AG08 encabezan la 2da Cascada</div>
+        <p class="insight-box-text">
+          Las 7 metas corporativas priorizadas estaban orientadas a continuidad (EG06), riesgo (EG02) y cumplimiento (EG11).
+          Las metas TI que más contribuyen a esas tres dimensiones son por naturaleza la <strong>seguridad de la información</strong>
+          y la <strong>integración tecnológica</strong>, lo que hace coherente que AG07 y AG08 lideren con 11 puntos sobre un máximo posible de 14.
+        </p>
+      </div>
+
+      <div style="margin-top:24px; text-align:right;">
+        <a href="factores.html" style="display:inline-flex; align-items:center; gap:8px; font-size:.825rem; font-weight:600; color:var(--navy-600); border:1px solid var(--border-color); padding:10px 18px; border-radius:8px; transition:var(--transition-fast);">
+          Ver matrices completas en detalle
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       04 — 11 FACTORES DE DISEÑO
+       ============================================ -->
+  <section class="section" id="factores">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">04</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Kit de Diseño ISACA</span>
+        </div>
+        <h2 class="section-title">Los 11 Factores de Diseño</h2>
+        <p class="section-subtitle">
+          El Kit oficial de Diseño del Sistema de Gobierno COBIT 2019 (archivo 615983147.xlsx de ISACA)
+          calcula automáticamente la importancia relativa de los 40 procesos a partir de 11 factores
+          contextuales. Cada valor ingresado se derivó de evidencia documentada del PETI BCRP,
+          sin asignación arbitraria.
+        </p>
+      </div>
+
+      <div class="insight-box navy reveal">
+        <div class="insight-box-label" style="color:var(--navy-500);">Como funciona el Kit</div>
+        <p class="insight-box-text">
+          En las hojas DF1 a DF11 del archivo VI_Cuadro_Resumen_BCRP_COBIT2019.xlsx se ingresaron los valores
+          de cada factor. La hoja Canvas combina automáticamente todos los factores mediante fórmulas predefinidas
+          por ISACA y entrega un puntaje final (columna "Concluded Scope") para cada uno de los 40 procesos.
+          El equipo no realizó ningún cálculo manual adicional en esta etapa.
+        </p>
+      </div>
+
+      <!-- Grid de factores -->
+      <div class="grid-3 factors-grid stagger-group mt-8">
+
+        <!-- DF1 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF1</span>
+            <span class="factor-category">Estrategia</span>
+          </div>
+          <div class="factor-card-title">Estrategia Empresarial</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Valores ingresados (escala 1-5)</div>
+              <div class="factor-bar-group" style="margin-top:8px;">
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.7rem; min-width:150px;">Cliente / Estabilidad</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill gold" data-fill="100%"></div></div>
+                  <span class="factor-bar-value">5</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.7rem; min-width:150px;">Innovación / Diferenciación</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill navy" data-fill="80%"></div></div>
+                  <span class="factor-bar-value">4</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.7rem; min-width:150px;">Liderazgo en Costos</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="40%"></div></div>
+                  <span class="factor-bar-value">2</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.7rem; min-width:150px;">Crecimiento / Adquisición</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="20%"></div></div>
+                  <span class="factor-bar-value">1</span>
+                </div>
+              </div>
+            </div>
+            <p class="factor-why">3 de 5 OE apuntan a estabilidad (OE4, OE14, OE1/OE5) → valor 5. Los 2 restantes apuntan a innovación (OE10, OE9) → valor 4. No hay evidencia de crecimiento por adquisición en un banco central.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica principalmente</span>
+              <span class="process-chip top">APO12</span>
+              <span class="process-chip top">APO13</span>
+              <span class="process-chip top">DSS04</span>
+              <span class="process-chip top">DSS05</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF2 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF2</span>
+            <span class="factor-category">Metas</span>
+          </div>
+          <div class="factor-card-title">Metas Empresariales</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Conversion desde la 1ra Cascada</div>
+              <div class="factor-value-content" style="margin-top:6px; font-family:'JetBrains Mono',monospace; font-size:.75rem; color:var(--navy-600);">
+                Valor = redondeo[ 1 + (Suma − 2) × 4/6 ]<br>
+                EG08 (8pts) → 5 &nbsp;|&nbsp; EG06 (7pts) → 4<br>
+                EG09 (2pts) → 1 &nbsp;(mínimo)
+              </div>
+            </div>
+            <p class="factor-why">En lugar de asignar manualmente, el equipo convirtió los puntajes reales de la 1ra Cascada usando una fórmula lineal. Esto garantiza coherencia total: el proceso con más puntaje en la Cascada recibe el valor máximo en DF2, y viceversa.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Garantiza coherencia entre herramientas</span>
+              <span class="process-chip">1ra Cascada</span>
+              <span class="process-chip">Kit ISACA DF2</span>
+              <span class="process-chip">Canvas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF3 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent" style="background:linear-gradient(90deg,var(--risk-high),var(--gold-500));"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF3</span>
+            <span class="factor-category">Riesgo</span>
+          </div>
+          <div class="factor-card-title">Perfil de Riesgo</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Categorías mas criticas (Impacto × Probabilidad)</div>
+              <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:.72rem; color:var(--text-secondary);">Ataques lógicos (APT, ransomware)</span>
+                  <span class="risk-badge very-high">5 × 5</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:.72rem; color:var(--text-secondary);">Acciones no autorizadas (fraude SWIFT)</span>
+                  <span class="risk-badge very-high">5 × 5</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:.72rem; color:var(--text-secondary);">Gestión de datos e información</span>
+                  <span class="risk-badge very-high">5 × 5</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:.72rem; color:var(--text-secondary);">Incidentes de infraestructura TI</span>
+                  <span class="risk-badge high">5 × 4</span>
+                </div>
+              </div>
+            </div>
+            <p class="factor-why">Cada calificación responde a hechos documentados en el PETI, no a percepciones. El PETI identifica explícitamente la ciberseguridad como brecha activa y la ausencia del tercer DC como vulnerabilidad crítica.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica fuertemente</span>
+              <span class="process-chip top">APO12</span>
+              <span class="process-chip top">APO13</span>
+              <span class="process-chip top">DSS05</span>
+              <span class="process-chip top">EDM03</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF4 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF4</span>
+            <span class="factor-category">Problemas TI</span>
+          </div>
+          <div class="factor-card-title">Problemas Relacionados con TI</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">7 problemas clasificados como GRAVES (valor 3/3)</div>
+              <div style="display:flex; flex-direction:column; gap:4px; margin-top:8px;">
+                <div style="font-size:.72rem; color:var(--text-primary); padding:3px 0; border-bottom:1px solid var(--border-light);">Incidentes significativos de seguridad</div>
+                <div style="font-size:.72rem; color:var(--text-primary); padding:3px 0; border-bottom:1px solid var(--border-light);">Recursos TI insuficientes / habilidades inadecuadas</div>
+                <div style="font-size:.72rem; color:var(--text-primary); padding:3px 0; border-bottom:1px solid var(--border-light);">Proyectos TI que no satisfacen o llegan tarde (LBTR/SIMC)</div>
+                <div style="font-size:.72rem; color:var(--text-primary); padding:3px 0; border-bottom:1px solid var(--border-light);">Implementación obstaculizada por arquitectura legacy</div>
+                <div style="font-size:.72rem; color:var(--text-primary); padding:3px 0; border-bottom:1px solid var(--border-light);">Problemas de calidad e integración de datos</div>
+                <div style="font-size:.72rem; color:var(--text-primary); padding:3px 0; border-bottom:1px solid var(--border-light);">Incapacidad de aprovechar nuevas tecnologías (CBDC)</div>
+                <div style="font-size:.72rem; color:var(--text-primary); padding:3px 0;">Incumplimiento de requisitos regulatorios (SWIFT CSP)</div>
+              </div>
+            </div>
+            <p class="factor-why">Solo se marcó como GRAVE aquello con cita textual directa del PETI. Los 13 problemas restantes recibieron valor 1 o 2 por falta de evidencia explícita.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica</span>
+              <span class="process-chip top">MEA03</span>
+              <span class="process-chip top">APO13</span>
+              <span class="process-chip">BAI03</span>
+              <span class="process-chip">APO14</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF5 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF5</span>
+            <span class="factor-category">Amenazas</span>
+          </div>
+          <div class="factor-card-title">Panorama de Amenazas</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Distribución ingresada (suma 100%)</div>
+              <div class="factor-bar-group" style="margin-top:8px;">
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Alto</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill gold" data-fill="100%"></div></div>
+                  <span class="factor-bar-value">100%</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Normal</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="0%"></div></div>
+                  <span class="factor-bar-value">0%</span>
+                </div>
+              </div>
+            </div>
+            <p class="factor-why">El BCRP opera el sistema de pagos interbancario nacional y es, por naturaleza institucional, un objetivo prioritario para actores maliciosos avanzados (APT, fraude SWIFT, ransomware). 100% alto no es una exageración: es la realidad del sector financiero global.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica todos los procesos de seguridad</span>
+              <span class="process-chip top">DSS05</span>
+              <span class="process-chip top">APO13</span>
+              <span class="process-chip top">EDM03</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF6 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF6</span>
+            <span class="factor-category">Cumplimiento</span>
+          </div>
+          <div class="factor-card-title">Requisitos de Cumplimiento</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Nivel de exigencia normativa</div>
+              <div class="factor-bar-group" style="margin-top:8px;">
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Alto</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill gold" data-fill="100%"></div></div>
+                  <span class="factor-bar-value">100%</span>
+                </div>
+              </div>
+            </div>
+            <p class="factor-why">El BCRP está regido por la Constitución (Art. 84°), la Ley Orgánica del BCRP, los estándares del BIS (Banco de Pagos Internacionales), el SWIFT Customer Security Programme (CSP) y la ISO/IEC 27001. Todo exige cumplimiento riguroso.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica</span>
+              <span class="process-chip top">MEA03</span>
+              <span class="process-chip top">APO13</span>
+              <span class="process-chip top">APO12</span>
+              <span class="process-chip top">EDM03</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF7 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF7</span>
+            <span class="factor-category">Rol de TI</span>
+          </div>
+          <div class="factor-card-title">Rol de TI en la Institución</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Valores asignados (escala 1-5)</div>
+              <div class="factor-bar-group" style="margin-top:8px;">
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Fábrica (Factory)</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill gold" data-fill="100%"></div></div>
+                  <span class="factor-bar-value">5</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Estratégico (Strategic)</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill gold" data-fill="100%"></div></div>
+                  <span class="factor-bar-value">5</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Soporte (Support)</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="40%"></div></div>
+                  <span class="factor-bar-value">2</span>
+                </div>
+              </div>
+            </div>
+            <p class="factor-why">El LBTR opera 24/7 sin posibilidad de interrupción (rol Fábrica = 5). El PETI fue aprobado al nivel más alto institucional y define la TI como habilitadora estratégica del Banco (rol Estratégico = 5).</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica</span>
+              <span class="process-chip top">DSS01</span>
+              <span class="process-chip top">DSS04</span>
+              <span class="process-chip">APO02</span>
+              <span class="process-chip">EDM01</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF8 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF8</span>
+            <span class="factor-category">Abastecimiento</span>
+          </div>
+          <div class="factor-card-title">Modelo de Abastecimiento de TI</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Distribucion (suma 100%)</div>
+              <div class="factor-bar-group" style="margin-top:8px;">
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Insourcing (interno)</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill navy" data-fill="60%"></div></div>
+                  <span class="factor-bar-value">60%</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Cloud</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="20%"></div></div>
+                  <span class="factor-bar-value">20%</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Outsourcing</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="20%"></div></div>
+                  <span class="factor-bar-value">20%</span>
+                </div>
+              </div>
+            </div>
+            <p class="factor-why">Los sistemas críticos (LBTR, SIMC, SWIFT) son gestionados directamente por la GTI. La externalización en un banco central es mínima por razones de seguridad nacional y soberanía financiera.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica</span>
+              <span class="process-chip">APO07</span>
+              <span class="process-chip">APO10</span>
+              <span class="process-chip">BAI03</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF9 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF9</span>
+            <span class="factor-category">Implementación</span>
+          </div>
+          <div class="factor-card-title">Métodos de Implementación de TI</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Distribucion de metodologias</div>
+              <div class="factor-bar-group" style="margin-top:8px;">
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Tradicional (Cascada)</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill navy" data-fill="75%"></div></div>
+                  <span class="factor-bar-value">75%</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Ágil</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="20%"></div></div>
+                  <span class="factor-bar-value">20%</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">DevOps</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="5%"></div></div>
+                  <span class="factor-bar-value">5%</span>
+                </div>
+              </div>
+            </div>
+            <p class="factor-why">Los sistemas financieros críticos del BCRP (LBTR, SWIFT) exigen ciclos de validación formales, pruebas exhaustivas y aprobaciones regulatorias antes de cada cambio. Esto es incompatible con metodologías puramente ágiles.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica</span>
+              <span class="process-chip">BAI01</span>
+              <span class="process-chip">BAI06</span>
+              <span class="process-chip">BAI07</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF10 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF10</span>
+            <span class="factor-category">Adopción</span>
+          </div>
+          <div class="factor-card-title">Estrategia de Adopción Tecnológica</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Perfil de adopcion</div>
+              <div class="factor-bar-group" style="margin-top:8px;">
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Seguidor (Follower)</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill navy" data-fill="75%"></div></div>
+                  <span class="factor-bar-value">75%</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Precursor (First Mover)</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="25%"></div></div>
+                  <span class="factor-bar-value">25%</span>
+                </div>
+                <div class="factor-bar-row">
+                  <span class="factor-bar-label" style="font-size:.72rem;">Rezagado (Slow Adopter)</span>
+                  <div class="factor-bar-track"><div class="factor-bar-fill muted" data-fill="0%"></div></div>
+                  <span class="factor-bar-value">0%</span>
+                </div>
+              </div>
+            </div>
+            <p class="factor-why">El BCRP adopta estándares ya probados internacionalmente (ISO 20022, SWIFT CSP) antes que tecnología experimental. Es Seguidor por diseño institucional: la estabilidad del sistema de pagos exige tecnología validada, no disruptiva.</p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Amplifica</span>
+              <span class="process-chip">APO04</span>
+              <span class="process-chip">BAI02</span>
+              <span class="process-chip">BAI03</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DF11 -->
+        <div class="factor-card reveal">
+          <div class="factor-card-accent" style="background:linear-gradient(90deg,var(--navy-500),var(--navy-300));"></div>
+          <div class="factor-card-head">
+            <span class="factor-df-code">DF11</span>
+            <span class="factor-category">Tamaño</span>
+          </div>
+          <div class="factor-card-title">Tamaño de la Empresa</div>
+          <div class="factor-card-body">
+            <div class="factor-value-display">
+              <div class="factor-value-label">Clasificacion</div>
+              <div class="factor-value-content" style="margin-top:6px;">
+                <span style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:700; color:var(--navy-800);">Grande</span>
+              </div>
+            </div>
+            <p class="factor-why">
+              El BCRP cuenta con múltiples gerencias misionales, presupuesto autónomo constitucional, operaciones críticas nacionales (pagos interbancarios, reservas internacionales) e impacto en todo el sistema financiero peruano. No hay duda de su clasificación.
+            </p>
+            <div class="factor-effect">
+              <span class="factor-effect-label">Consecuencia</span>
+              <span style="font-size:.75rem; color:var(--text-secondary);">Aplica el scope completo de los 40 procesos COBIT sin reducción por tamaño. Una empresa pequeña podría omitir procesos; el BCRP no.</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /factors-grid -->
+
+      <div style="margin-top:24px; text-align:right;" class="reveal">
+        <a href="factores.html" style="display:inline-flex; align-items:center; gap:8px; font-size:.825rem; font-weight:600; color:var(--navy-600); border:1px solid var(--border-color); padding:10px 18px; border-radius:8px; transition:var(--transition-fast);">
+          Ver todos los factores con tablas completas
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       05 — CANVAS Y 40 PROCESOS
+       ============================================ -->
+  <section class="section" id="canvas">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">05</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Entregable Final</span>
+        </div>
+        <h2 class="section-title">Canvas — VI Cuadro Resumen BCRP</h2>
+        <p class="section-subtitle">
+          La hoja Canvas del archivo <span class="text-mono">VI_Cuadro_Resumen_BCRP_COBIT2019.xlsx</span>
+          es el entregable central del proyecto. Combina automáticamente los 11 factores
+          y entrega la importancia relativa de los 40 procesos COBIT para el BCRP.
+        </p>
+      </div>
+
+      <!-- Diagrama de convergencia -->
+      <div class="convergence-diagram reveal">
+        <div class="convergence-tool">
+          <div class="convergence-tool-label">Herramienta 1</div>
+          <div class="convergence-tool-name">Modelo en Cascada (manual)</div>
+          <div class="convergence-steps">
+            <div class="convergence-step">5 OBJ BCRP identificados del Plan Estratégico</div>
+            <div class="convergence-step">Matriz 5 × 13 con escala 0-1-2 → 7 metas EG</div>
+            <div class="convergence-step">Matriz 7 × 13 → 8 metas AG</div>
+            <div class="convergence-step">Matriz 8 × 40 → top 10 procesos</div>
+            <div class="convergence-step" style="font-weight:600; color:var(--text-primary);">Resultado: 6 procesos centrales</div>
+          </div>
+        </div>
+
+        <div class="convergence-center">
+          <div class="convergence-arrow">
+            <div style="font-size:.65rem; color:var(--text-muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px;">Verificacion</div>
+            <div class="convergence-arrow-line"></div>
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--gold-500); display:flex; align-items:center; justify-content:center;">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6l3 3 4-5" stroke="#0a1628" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="convergence-arrow-line"></div>
+            <div style="font-size:.65rem; color:var(--text-muted); letter-spacing:.1em; text-transform:uppercase; margin-top:8px;">Coinciden</div>
+          </div>
+          <div class="convergence-result" style="margin-top:12px;">
+            <div class="convergence-result-label">Ambas herramientas</div>
+            <div class="convergence-result-text">Mismos 6 procesos priorizados cuando se alimentan de la misma evidencia institucional</div>
+          </div>
+        </div>
+
+        <div class="convergence-tool">
+          <div class="convergence-tool-label">Herramienta 2</div>
+          <div class="convergence-tool-name">Kit de Diseño ISACA (automático)</div>
+          <div class="convergence-steps">
+            <div class="convergence-step">DF1: Estrategia → Client/Stability=5, Innovation=4</div>
+            <div class="convergence-step">DF2: Metas → convertidas de 1ra Cascada</div>
+            <div class="convergence-step">DF3-DF4: Riesgo y problemas del PETI</div>
+            <div class="convergence-step">DF5-DF11: Contexto institucional BCRP</div>
+            <div class="convergence-step" style="font-weight:600; color:var(--text-primary);">Canvas calcula scores automáticos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scores Canvas -->
+      <div class="reveal mt-8" style="margin-bottom:20px;">
+        <h3>Los 40 Procesos COBIT — Importancia Relativa (Canvas)</h3>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:6px;">
+          Los 6 procesos resaltados en dorado son los que obtuvieron el puntaje más alto tanto en la
+          Cascada como en el Canvas, confirmando la coincidencia entre ambas metodologías.
+        </p>
+      </div>
+
+      <div id="chart-processes" style="min-height:900px;" class="reveal"></div>
+
+      <!-- Comparación Cascada vs Canvas -->
+      <div class="reveal mt-8">
+        <h3 style="margin-bottom:16px;">Verificacion de Consistencia</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="mono">Proceso COBIT</th>
+                <th>Nombre</th>
+                <th class="center">Puntaje Cascada</th>
+                <th class="center">Puntaje Canvas</th>
+                <th class="center">Nivel Sugerido</th>
+                <th class="center">Nivel Acordado</th>
+                <th>Nota del equipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-highlight">
+                <td class="mono">APO12</td>
+                <td>Gestionar el Riesgo</td>
+                <td class="center"><span class="score-badge high">10/16</span></td>
+                <td class="center"><span class="score-badge high">100%</span></td>
+                <td class="center">4</td>
+                <td class="center"><strong>4</strong></td>
+                <td>Se mantuvo. Mayor puntaje absoluto en el Canvas.</td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">EDM03</td>
+                <td>Optimización del Riesgo</td>
+                <td class="center"><span class="score-badge high">9/16</span></td>
+                <td class="center"><span class="score-badge high">90%</span></td>
+                <td class="center">4</td>
+                <td class="center"><strong>4</strong></td>
+                <td>Se mantuvo. Coherente con la criticidad del riesgo.</td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">APO13</td>
+                <td>Gestionar la Seguridad</td>
+                <td class="center"><span class="score-badge high">12/16</span></td>
+                <td class="center"><span class="score-badge high">90%</span></td>
+                <td class="center">4</td>
+                <td class="center"><strong>4</strong></td>
+                <td>Se mantuvo. ISO 27001 pendiente justifica nivel 4.</td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">DSS05</td>
+                <td>Servicios de Seguridad</td>
+                <td class="center"><span class="score-badge high">14/16</span></td>
+                <td class="center"><span class="score-badge high">90%</span></td>
+                <td class="center">4</td>
+                <td class="center"><strong>4</strong></td>
+                <td>Se mantuvo. Puntaje más alto de la Cascada.</td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">DSS04</td>
+                <td>Gestionar la Continuidad</td>
+                <td class="center"><span class="score-badge high">12/16</span></td>
+                <td class="center"><span class="score-badge high">80%</span></td>
+                <td class="center">4</td>
+                <td class="center"><strong>4</strong></td>
+                <td>Se mantuvo. Tercer DC pendiente exige nivel 4.</td>
+              </tr>
+              <tr class="row-highlight">
+                <td class="mono">MEA03</td>
+                <td>Cumplimiento Externo</td>
+                <td class="center"><span class="score-badge high">8/16</span></td>
+                <td class="center"><span class="score-badge high">80%</span></td>
+                <td class="center">4</td>
+                <td class="center"><strong>4</strong></td>
+                <td>Se mantuvo. SWIFT CSP + ISO 27001 exigen este nivel.</td>
+              </tr>
+              <tr>
+                <td class="mono">MEA01</td>
+                <td>Rendimiento y Conformidad</td>
+                <td class="center"><span class="score-badge s1">6/16</span></td>
+                <td class="center"><span class="score-badge s1">70%</span></td>
+                <td class="center">2</td>
+                <td class="center"><strong>3</strong></td>
+                <td style="color:var(--gold-700); font-weight:600;">Ajuste deliberado: sin KPIs formales, ningún otro proceso puede medir su propio avance.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; text-align:right;" class="reveal">
+        <a href="canvas.html" style="display:inline-flex; align-items:center; gap:8px; font-size:.825rem; font-weight:600; color:var(--navy-600); border:1px solid var(--border-color); padding:10px 18px; border-radius:8px;">
+          Ver Canvas con todos los 40 procesos
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       06 — LOS 6 PROCESOS PRIORIZADOS
+       ============================================ -->
+  <section class="section" id="procesos">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">06</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Procesos Centrales</span>
+        </div>
+        <h2 class="section-title">Los 6 Procesos COBIT Priorizados</h2>
+        <p class="section-subtitle">
+          Los procesos con mayor puntaje en la Tercera Cascada y mayor puntuación en el Canvas.
+          La coincidencia entre ambas metodologías no es casualidad: responde a que ambas
+          parten de la misma evidencia institucional real documentada en el PETI del BCRP.
+        </p>
+      </div>
+
+      <!-- Madurez general -->
+      <div class="maturity-compare reveal">
+        <div class="maturity-state as-is">
+          <div class="maturity-state-label">Situacion actual (AS-IS)</div>
+          <div class="maturity-level-num" data-count="2">0</div>
+          <div class="maturity-level-name">Nivel 2 — Gestionado</div>
+          <p style="font-size:.75rem; color:var(--text-muted); margin-top:10px; line-height:1.5;">Procesos operativos pero sin formalización completa, sin gobierno explícito y con brechas críticas documentadas.</p>
+        </div>
+        <div class="maturity-state to-be">
+          <div class="maturity-state-label">Meta institucional (TO-BE)</div>
+          <div class="maturity-level-num" data-count="4">0</div>
+          <div class="maturity-level-name">Nivel 4 — Cuantitativamente gestionado</div>
+          <p style="font-size:.75rem; color:var(--text-muted); margin-top:10px; line-height:1.5;">Procesos definidos, medidos con indicadores formales, supervisados por el Directorio bajo el EGIT COBIT 2019.</p>
+        </div>
+      </div>
+
+      <!-- Radar -->
+      <div class="reveal" style="max-width:500px; margin:40px auto;">
+        <div id="chart-maturity"></div>
+      </div>
+
+      <!-- Cards de procesos -->
+      <div class="grid-3 stagger-group mt-8">
+
+        <!-- DSS05 -->
+        <div class="process-card reveal">
+          <div class="process-card-header">
+            <div>
+              <span class="process-card-code">DSS05</span>
+              <div class="process-card-name">Gestionar los Servicios de Seguridad</div>
+            </div>
+            <span class="process-card-domain">DSS</span>
+          </div>
+          <div class="process-card-body">
+            <div class="process-card-scores">
+              <div class="score-item">
+                <div class="score-item-label">Cascada</div>
+                <div class="score-item-value">14 <small>/ 16</small></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item-label">Canvas ISACA</div>
+                <div class="score-item-value">90 <small>%</small></div>
+              </div>
+            </div>
+            <p style="font-size:.8rem; color:var(--text-secondary); line-height:1.65;">
+              Implementar y operar soluciones de seguridad de la información (HSM, MDM, SIEM, Threat Intelligence)
+              para proteger los sistemas críticos del BCRP contra ataques APT, ransomware y fraude SWIFT.
+            </p>
+            <div class="process-gap">
+              <div class="process-gap-label">Brecha de Madurez</div>
+              <div class="maturity-track">
+                <span class="maturity-label">Actual N1</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill current" data-fill="20%"></div>
+                </div>
+              </div>
+              <div class="maturity-track" style="margin-top:6px;">
+                <span class="maturity-label">Meta  N4</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill target" data-fill="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DSS04 -->
+        <div class="process-card reveal">
+          <div class="process-card-header">
+            <div>
+              <span class="process-card-code">DSS04</span>
+              <div class="process-card-name">Gestionar la Continuidad</div>
+            </div>
+            <span class="process-card-domain">DSS</span>
+          </div>
+          <div class="process-card-body">
+            <div class="process-card-scores">
+              <div class="score-item">
+                <div class="score-item-label">Cascada</div>
+                <div class="score-item-value">12 <small>/ 16</small></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item-label">Canvas ISACA</div>
+                <div class="score-item-value">80 <small>%</small></div>
+              </div>
+            </div>
+            <p style="font-size:.8rem; color:var(--text-secondary); line-height:1.65;">
+              Garantizar que el LBTR, SIMC y SWIFT estén disponibles ante cualquier incidente mediante el tercer
+              data center, planes BCP formalizados, RTO ≤ 4 horas y disponibilidad ≥ 99.9%.
+            </p>
+            <div class="process-gap">
+              <div class="process-gap-label">Brecha de Madurez</div>
+              <div class="maturity-track">
+                <span class="maturity-label">Actual N2</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill current" data-fill="40%"></div>
+                </div>
+              </div>
+              <div class="maturity-track" style="margin-top:6px;">
+                <span class="maturity-label">Meta  N4</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill target" data-fill="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- APO13 -->
+        <div class="process-card reveal">
+          <div class="process-card-header">
+            <div>
+              <span class="process-card-code">APO13</span>
+              <div class="process-card-name">Gestionar la Seguridad de la Información</div>
+            </div>
+            <span class="process-card-domain">APO</span>
+          </div>
+          <div class="process-card-body">
+            <div class="process-card-scores">
+              <div class="score-item">
+                <div class="score-item-label">Cascada</div>
+                <div class="score-item-value">12 <small>/ 16</small></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item-label">Canvas ISACA</div>
+                <div class="score-item-value">90 <small>%</small></div>
+              </div>
+            </div>
+            <p style="font-size:.8rem; color:var(--text-secondary); line-height:1.65;">
+              Establecer y mantener el SGSI bajo ISO 27001. Gestionar el plan de tratamiento de riesgos
+              de seguridad y supervisar su cumplimiento. Requiere certificación ISO/IEC 27001:2022.
+            </p>
+            <div class="process-gap">
+              <div class="process-gap-label">Brecha de Madurez</div>
+              <div class="maturity-track">
+                <span class="maturity-label">Actual N2</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill current" data-fill="40%"></div>
+                </div>
+              </div>
+              <div class="maturity-track" style="margin-top:6px;">
+                <span class="maturity-label">Meta  N4</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill target" data-fill="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- APO12 -->
+        <div class="process-card reveal">
+          <div class="process-card-header" style="background:var(--gold-600);">
+            <div>
+              <span class="process-card-code" style="color:rgba(255,255,255,.8);">APO12</span>
+              <div class="process-card-name">Gestionar el Riesgo</div>
+            </div>
+            <span class="process-card-domain" style="background:rgba(0,0,0,.15); color:rgba(255,255,255,.8);">APO</span>
+          </div>
+          <div class="process-card-body">
+            <div class="process-card-scores">
+              <div class="score-item">
+                <div class="score-item-label">Cascada</div>
+                <div class="score-item-value">10 <small>/ 16</small></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item-label">Canvas ISACA</div>
+                <div class="score-item-value" style="color:var(--gold-600);">100 <small>%</small></div>
+              </div>
+            </div>
+            <p style="font-size:.8rem; color:var(--text-secondary); line-height:1.65;">
+              Recopilar, analizar y mantener el perfil de riesgo TI del BCRP. Articular el riesgo
+              al Directorio y definir la cartera de acciones de gestión. El 100% en el Canvas
+              lo posiciona como el proceso más crítico para el BCRP.
+            </p>
+            <div class="process-gap">
+              <div class="process-gap-label">Brecha de Madurez</div>
+              <div class="maturity-track">
+                <span class="maturity-label">Actual N2</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill current" data-fill="40%"></div>
+                </div>
+              </div>
+              <div class="maturity-track" style="margin-top:6px;">
+                <span class="maturity-label">Meta  N4</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill target" data-fill="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDM03 -->
+        <div class="process-card reveal">
+          <div class="process-card-header">
+            <div>
+              <span class="process-card-code">EDM03</span>
+              <div class="process-card-name">Asegurar la Optimización del Riesgo</div>
+            </div>
+            <span class="process-card-domain">EDM</span>
+          </div>
+          <div class="process-card-body">
+            <div class="process-card-scores">
+              <div class="score-item">
+                <div class="score-item-label">Cascada</div>
+                <div class="score-item-value">9 <small>/ 16</small></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item-label">Canvas ISACA</div>
+                <div class="score-item-value">90 <small>%</small></div>
+              </div>
+            </div>
+            <p style="font-size:.8rem; color:var(--text-secondary); line-height:1.65;">
+              Proceso de gobierno (dominio EDM): el Directorio evalúa el apetito de riesgo, dirige la
+              gestión de riesgos TI y monitorea que los riesgos no excedan los límites aceptados.
+              Es el nivel estratégico que supervisa a APO12.
+            </p>
+            <div class="process-gap">
+              <div class="process-gap-label">Brecha de Madurez</div>
+              <div class="maturity-track">
+                <span class="maturity-label">Actual N1</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill current" data-fill="20%"></div>
+                </div>
+              </div>
+              <div class="maturity-track" style="margin-top:6px;">
+                <span class="maturity-label">Meta  N4</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill target" data-fill="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEA03 -->
+        <div class="process-card reveal">
+          <div class="process-card-header">
+            <div>
+              <span class="process-card-code">MEA03</span>
+              <div class="process-card-name">Gestionar el Cumplimiento de Requisitos Externos</div>
+            </div>
+            <span class="process-card-domain">MEA</span>
+          </div>
+          <div class="process-card-body">
+            <div class="process-card-scores">
+              <div class="score-item">
+                <div class="score-item-label">Cascada</div>
+                <div class="score-item-value">8 <small>/ 16</small></div>
+              </div>
+              <div class="score-item">
+                <div class="score-item-label">Canvas ISACA</div>
+                <div class="score-item-value">80 <small>%</small></div>
+              </div>
+            </div>
+            <p style="font-size:.8rem; color:var(--text-secondary); line-height:1.65;">
+              Identificar y monitorear el cumplimiento con la Constitución (Art. 84°), ISO 27001,
+              SWIFT CSP y estándares del BIS. Certificar el cumplimiento ante organismos internacionales
+              y asegurar la transparencia hacia el Directorio.
+            </p>
+            <div class="process-gap">
+              <div class="process-gap-label">Brecha de Madurez</div>
+              <div class="maturity-track">
+                <span class="maturity-label">Actual N2</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill current" data-fill="40%"></div>
+                </div>
+              </div>
+              <div class="maturity-track" style="margin-top:6px;">
+                <span class="maturity-label">Meta  N4</span>
+                <div class="maturity-bar-wrap">
+                  <div class="maturity-bar-fill target" data-fill="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /process cards -->
+    </div>
+  </section>
+
+  <!-- ============================================
+       07 — LOS 7 COMPONENTES
+       ============================================ -->
+  <section class="section" id="componentes">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">07</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Materializacion</span>
+        </div>
+        <h2 class="section-title">Los 7 Componentes COBIT 2019</h2>
+        <p class="section-subtitle">
+          Identificar y priorizar los 6 procesos responde al "qué" se debe gobernar.
+          Los 7 Componentes responden al "cómo" se materializa cada proceso dentro
+          de la estructura real del BCRP. Se desarrollaron para los 6 procesos centrales
+          en un documento de 44 páginas de soporte.
+        </p>
+      </div>
+
+      <div class="grid-2 stagger-group mt-8">
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Componente A</span>
+              <h4 style="margin-top:4px;">Proceso</h4>
+            </div>
+            <span class="card-code">Actividades</span>
+          </div>
+          <p>Subprocesos, prácticas de gobernanza y actividades específicas con nivel de capacidad actual evaluado. Para cada uno de los 6 procesos se identificaron 2 a 3 subprocesos críticos.</p>
+          <div style="margin-top:12px; background:var(--gray-50); padding:10px 14px; border-radius:8px; font-size:.78rem; color:var(--text-secondary);">
+            Ejemplo en APO12: Recopilar datos de riesgo (N1) · Mantener perfil de riesgo (N2) · Responder al riesgo (N1)
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Componente B</span>
+              <h4 style="margin-top:4px;">Estructuras Organizacionales</h4>
+            </div>
+            <span class="card-code">RACI</span>
+          </div>
+          <p>Define quién es Responsable (R) y quién Rinde Cuentas (A) en cada subproceso. Para el BCRP: Comité de Gobierno de TI, Gerencia de Riesgos, GTI y gerencias misionales.</p>
+          <div style="margin-top:12px; display:flex; gap:6px; flex-wrap:wrap;">
+            <span style="font-size:.7rem; background:var(--navy-50); color:var(--navy-600); border:1px solid var(--navy-100); padding:2px 8px; border-radius:4px;">Comité Gov. TI</span>
+            <span style="font-size:.7rem; background:var(--navy-50); color:var(--navy-600); border:1px solid var(--navy-100); padding:2px 8px; border-radius:4px;">GTI (CIO)</span>
+            <span style="font-size:.7rem; background:var(--navy-50); color:var(--navy-600); border:1px solid var(--navy-100); padding:2px 8px; border-radius:4px;">Gerencia Riesgos</span>
+            <span style="font-size:.7rem; background:var(--navy-50); color:var(--navy-600); border:1px solid var(--navy-100); padding:2px 8px; border-radius:4px;">Auditoría Interna</span>
+            <span style="font-size:.7rem; background:var(--navy-50); color:var(--navy-600); border:1px solid var(--navy-100); padding:2px 8px; border-radius:4px;">GOMEF</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Componente C</span>
+              <h4 style="margin-top:4px;">Flujos de Información</h4>
+            </div>
+            <span class="card-code">Entradas / Salidas</span>
+          </div>
+          <p>Traza el origen de cada insumo y el destino de cada producto. Muestra cómo la información fluye entre procesos COBIT y hacia el Directorio.</p>
+          <div style="margin-top:12px; background:var(--gray-50); padding:10px 14px; border-radius:8px; font-size:.78rem; color:var(--text-secondary);">
+            Ejemplo: Datos de incidentes SWIFT (entrada de DSS05) → Perfil de riesgo agregado (salida hacia EDM03 y Directorio)
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Componente D</span>
+              <h4 style="margin-top:4px;">Personas, Habilidades y Competencias</h4>
+            </div>
+            <span class="card-code">Perfiles</span>
+          </div>
+          <p>Identifica roles clave y el nivel de competencia requerido. Los roles críticos para el BCRP son: CISO, Analista de Riesgos TI y equipo CSIRT/CERT.</p>
+          <div style="margin-top:12px; display:flex; gap:6px; flex-wrap:wrap;">
+            <span style="font-size:.7rem; background:var(--gold-100); color:var(--gold-700); border:1px solid var(--gold-300); padding:2px 8px; border-radius:4px;">CISO</span>
+            <span style="font-size:.7rem; background:var(--gold-100); color:var(--gold-700); border:1px solid var(--gold-300); padding:2px 8px; border-radius:4px;">Analista Riesgos TI</span>
+            <span style="font-size:.7rem; background:var(--gold-100); color:var(--gold-700); border:1px solid var(--gold-300); padding:2px 8px; border-radius:4px;">CSIRT/CERT</span>
+            <span style="font-size:.7rem; background:var(--gold-100); color:var(--gold-700); border:1px solid var(--gold-300); padding:2px 8px; border-radius:4px;">Consultor CGEIT</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Componente E</span>
+              <h4 style="margin-top:4px;">Políticas y Procedimientos</h4>
+            </div>
+            <span class="card-code">Reglas formales</span>
+          </div>
+          <p>Propone las políticas concretas necesarias para cada proceso, con plazos y responsables definidos formalmente.</p>
+          <div style="margin-top:12px; background:var(--gray-50); padding:10px 14px; border-radius:8px; font-size:.78rem; color:var(--text-secondary);">
+            Ejemplos: Política de Captura de Eventos de Riesgo TI (plazo máximo 24h para registrar incidente) · Política de Respuesta a Incidentes Críticos · Política de Gobierno de TI del BCRP
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Componente F</span>
+              <h4 style="margin-top:4px;">Cultura, Ética y Comportamiento</h4>
+            </div>
+            <span class="card-code">Actitudes</span>
+          </div>
+          <p>Documenta las actitudes institucionales que sostienen cada proceso. Sin cultura adecuada, las políticas quedan en el papel.</p>
+          <div style="margin-top:12px; background:var(--gray-50); padding:10px 14px; border-radius:8px; font-size:.78rem; color:var(--text-secondary);">
+            Clave para el BCRP: cultura de transparencia en el reporte de incidentes (sin temor a represalias) y prudencia institucional en la evaluación de riesgos ante el Directorio.
+          </div>
+        </div>
+
+        <div class="card reveal" style="grid-column: 1 / -1;">
+          <div class="card-header">
+            <div>
+              <span class="text-label">Componente G</span>
+              <h4 style="margin-top:4px;">Servicios, Infraestructura y Aplicaciones</h4>
+            </div>
+            <span class="card-code">Herramientas TI</span>
+          </div>
+          <p style="margin-bottom:16px;">Identifica qué herramientas tecnológicas son necesarias para que cada proceso sea viable, eficiente y medible. Estas herramientas son exactamente las brechas identificadas en el PETI.</p>
+          <div class="grid-3" style="gap:12px;">
+            <div style="background:var(--navy-50); border:1px solid var(--navy-100); border-radius:8px; padding:12px;">
+              <div style="font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--navy-500); margin-bottom:6px;">Para APO12 / EDM03</div>
+              <div style="font-size:.78rem; color:var(--text-secondary);">Sistema GRC (Gobierno, Riesgo y Cumplimiento) · Dashboard de riesgos TI para el Directorio</div>
+            </div>
+            <div style="background:var(--navy-50); border:1px solid var(--navy-100); border-radius:8px; padding:12px;">
+              <div style="font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--navy-500); margin-bottom:6px;">Para APO13 / DSS05</div>
+              <div style="font-size:.78rem; color:var(--text-secondary);">SIEM (detección y respuesta) · HSM para LBTR · MDM para dispositivos móviles · VPN doble factor</div>
+            </div>
+            <div style="background:var(--navy-50); border:1px solid var(--navy-100); border-radius:8px; padding:12px;">
+              <div style="font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--navy-500); margin-bottom:6px;">Para DSS04 / MEA03</div>
+              <div style="font-size:.78rem; color:var(--text-secondary);">Tercer data center (pendiente en PETI) · Plataforma BCP automatizada · Sistema de reporte de cumplimiento SWIFT CSP</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /grid componentes -->
+
+      <div class="insight-box critical reveal mt-8">
+        <div class="insight-box-label">Hallazgo transversal de los 7 Componentes</div>
+        <p class="insight-box-text">
+          Al desarrollar los 7 componentes para los 6 procesos, el equipo identificó un patrón que se repite en todos:
+          el nivel de capacidad actual en las actividades específicas es de Nivel 1 o 2, mientras que el nivel objetivo es 3 o 4.
+          La <strong>causa raíz común</strong> detrás de todas las brechas es la misma:
+          la ausencia de un <strong>Comité de Gobierno de TI formalmente institucionalizado bajo COBIT 2019 en el BCRP</strong>.
+          Esto confirma indirectamente por qué el proceso EDM01, aunque no esté entre los 6 centrales,
+          aparece mencionado de forma recurrente como causa de fondo en casi todos los componentes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       08 — CONCLUSIONES
+       ============================================ -->
+  <section class="section" id="conclusiones">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">
+          <span class="section-num">08</span>
+          <span class="section-divider"></span>
+          <span class="section-tag">Cierre del Proyecto</span>
+        </div>
+        <h2 class="section-title">Conclusiones</h2>
+        <p class="section-subtitle">
+          Cuatro hallazgos fundamentales que emergen de la aplicación conjunta del Modelo en Cascada
+          y el Kit de Diseño ISACA sobre la realidad institucional del Banco Central de Reserva del Perú.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row stagger-group">
+        <div class="stat-block reveal">
+          <div class="stat-block-value"><span data-count="40">0</span></div>
+          <div class="stat-block-label">Procesos COBIT evaluados en el Canvas</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="stat-block-value"><span data-count="6">0</span></div>
+          <div class="stat-block-label">Procesos centrales con desarrollo profundo</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="stat-block-value"><span data-count="11">0</span></div>
+          <div class="stat-block-label">Factores de diseño aplicados al BCRP</div>
+        </div>
+        <div class="stat-block reveal">
+          <div class="stat-block-value"><span data-count="2">0</span> <span class="stat-block-unit">→ 4</span></div>
+          <div class="stat-block-label">Salto de nivel de madurez proyectado</div>
+        </div>
+      </div>
+
+      <div class="deco-line-h gold reveal"></div>
+
+      <!-- Conclusiones -->
+      <div class="reveal">
+        <div class="conclusion-item">
+          <div class="conclusion-num">01</div>
+          <div>
+            <div class="conclusion-title">Dos caminos, un mismo destino</div>
+            <p class="conclusion-text">
+              La Cascada manual (3 matrices 0-1-2) y el Kit de Diseño ISACA (11 factores con cálculo automático)
+              son metodologías completamente distintas en su mecánica, pero cuando se alimentan con la misma
+              evidencia institucional real del PETI BCRP, llegan exactamente a la misma conclusión:
+              los procesos de mayor urgencia son APO12, EDM03, APO13, DSS05, DSS04 y MEA03.
+              Esta coincidencia no fue forzada ni ajustada manualmente; es la consecuencia natural de que
+              ambas herramientas parten de la misma realidad documentada.
+            </p>
+          </div>
+        </div>
+
+        <div class="conclusion-item">
+          <div class="conclusion-num">02</div>
+          <div>
+            <div class="conclusion-title">El perfil del BCRP es claro y consistente</div>
+            <p class="conclusion-text">
+              El BCRP es una institución que prioriza la estabilidad y la confianza pública por encima de la innovación
+              disruptiva. Esto se evidenció de forma consistente en DF1 (estrategia orientada a estabilidad),
+              DF7 (TI como Fábrica y Estratégico simultáneamente) y DF10 (adopción tecnológica como Seguidor).
+              Estos tres factores, llenados con evidencia del PETI, construyen un retrato coherente de un banco central
+              que innova pero que no puede permitirse el riesgo de ser First Mover en tecnologías no validadas.
+            </p>
+          </div>
+        </div>
+
+        <div class="conclusion-item">
+          <div class="conclusion-num">03</div>
+          <div>
+            <div class="conclusion-title">La brecha de fondo es de gobierno, no tecnica</div>
+            <p class="conclusion-text">
+              La brecha más crítica identificada en todo el proyecto no es la falta del tercer data center, ni la
+              ausencia de un SIEM, ni la arquitectura legacy del LBTR. Es la ausencia de un
+              <strong>Comité de Gobierno de TI formalmente institucionalizado bajo COBIT 2019 en el BCRP</strong>.
+              Esta carencia explica transversalmente por qué procesos tan distintos entre sí como APO12 (gestión de riesgo),
+              DSS05 (seguridad) y MEA03 (cumplimiento) comparten el mismo nivel de madurez bajo (Nivel 1-2):
+              sin un marco de gobierno formal, ningún proceso puede alcanzar su nivel objetivo de forma sostenida.
+            </p>
+          </div>
+        </div>
+
+        <div class="conclusion-item">
+          <div class="conclusion-num">04</div>
+          <div>
+            <div class="conclusion-title">El proyecto esta listo para implementarse</div>
+            <p class="conclusion-text">
+              El diseño desarrollado deja al BCRP en condiciones de pasar a la siguiente fase del ciclo de vida
+              de COBIT 2019: la implementación. El Sistema de Gobierno de TI propuesto está documentado
+              (Manual Explicativo), priorizado (Canvas con 40 procesos) y validado con evidencia cruzada
+              entre dos herramientas oficiales del marco. Los 6 procesos centrales tienen sus 7 componentes
+              desarrollados, sus matrices RACI definidas, sus políticas propuestas y sus herramientas TI identificadas.
+              El archivo entregable <span class="text-mono">VI_Cuadro_Resumen_BCRP_COBIT2019.xlsx</span> es el
+              instrumento de gestión que el Comité de Gobierno de TI del BCRP puede usar desde el primer día de su constitución.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Referencias -->
+      <div class="section-note reveal" style="margin-top:40px;">
+        <svg class="section-note-icon" viewBox="0 0 16 16" fill="none">
+          <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3.5a.875.875 0 110 1.75A.875.875 0 018 4.5zM7 7h2v5H7V7z" fill="#a0aec0"/>
+        </svg>
+        <p class="section-note-text">
+          <strong>Referencias principales:</strong> ISACA. (2018). COBIT® 2019: Marco de Referencia, Gobernanza y Objetivos de Gestión.
+          ISACA. (2018). COBIT® 2019 Design Guide. BCRP. (2022). Plan Estratégico 2022-2026 y PETI 2022-2026.
+          Constitución Política del Perú — Artículo 84°. ISO/IEC 27001:2022. SWIFT Customer Security Programme (CSP).
+          BIS — Principios de Gobierno de Tecnología para Bancos Centrales.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer style="background:var(--navy-900); color:var(--navy-300); padding:32px 48px; border-top:1px solid var(--navy-700);">
+    <div style="max-width:var(--content-max); margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:.65rem; color:var(--gold-400); letter-spacing:.12em; margin-bottom:4px;">BCRP · COBIT® 2019</div>
+        <div style="font-size:.78rem;">Diseño del Sistema de Gobierno de TI · Universidad Peruana Unión · 2025</div>
+      </div>
+      <div style="font-size:.72rem; text-align:right; line-height:1.6;">
+        Cabana Sulca, Cristian · Pastor Mamani, Alessandro<br>
+        Montes Mamani, Andrés · Fernández Sánchez, Jerson<br>
+        Docente: Ing. Rick Armando Ccapa Luque
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- Back to top -->
+<button id="back-to-top" style="position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--navy-800);border:1px solid var(--navy-600);display:flex;align-items:center;justify-content:center;z-index:50;opacity:0;transition:opacity .3s;cursor:pointer;" aria-label="Volver al inicio">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 12V4M4 8l4-4 4 4" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/></svg>
+</button>
+
+<script src="../js/main.js"></script>
+<script src="../js/animations.js"></script>
+<script src="../js/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+/* =============================================
+   MAIN.CSS — Sistema de diseño base
+   Proyecto BCRP · COBIT 2019
+   ============================================= */
+
+/* --- Importar tipografías --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* =============================================
+   1. CSS RESET
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+img, svg { max-width: 100%; display: block; }
+table { border-collapse: collapse; width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+
+/* =============================================
+   2. CSS VARIABLES
+   ============================================= */
+:root {
+  /* Colores primarios */
+  --navy-900:   #0a1628;
+  --navy-800:   #0d1f3c;
+  --navy-700:   #1b2d45;
+  --navy-600:   #1e3a5f;
+  --navy-500:   #2c4a6e;
+  --navy-400:   #3d6494;
+  --navy-300:   #5b83b5;
+  --navy-200:   #8aaed4;
+  --navy-100:   #c5d8ed;
+  --navy-50:    #eaf1f8;
+
+  /* Gold accent */
+  --gold-700:   #8b6914;
+  --gold-600:   #b58a20;
+  --gold-500:   #c8a84b;
+  --gold-400:   #d9be72;
+  --gold-300:   #e8d49e;
+  --gold-100:   #f7f0dd;
+
+  /* Neutrales */
+  --white:      #ffffff;
+  --gray-50:    #f8f9fb;
+  --gray-100:   #f1f3f6;
+  --gray-200:   #e2e8f0;
+  --gray-300:   #cbd5e0;
+  --gray-400:   #a0aec0;
+  --gray-500:   #718096;
+  --gray-600:   #4a5568;
+  --gray-700:   #2d3748;
+  --gray-800:   #1a202c;
+  --gray-900:   #0f1419;
+
+  /* Semánticos */
+  --text-primary:   var(--gray-800);
+  --text-secondary: var(--gray-600);
+  --text-muted:     var(--gray-400);
+  --border-color:   var(--gray-200);
+  --border-light:   var(--gray-100);
+  --bg-section-alt: var(--gray-50);
+
+  /* Riesgo / estado */
+  --risk-critical: #7c1d1d;
+  --risk-high:     #9b2335;
+  --risk-medium:   #c47a00;
+  --risk-low:      #276749;
+  --risk-none:     var(--gray-400);
+
+  /* Nivel de madurez */
+  --level-1: #c47a00;
+  --level-2: #b05e00;
+  --level-3: #1e5c3a;
+  --level-4: #0f4028;
+
+  /* Espaciado */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Layout */
+  --sidebar-width: 272px;
+  --content-max:   1100px;
+  --content-pad:   48px;
+
+  /* Bordes */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Sombras */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:  0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
+  --shadow-lg:  0 12px 32px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.05);
+  --shadow-xl:  0 24px 48px rgba(0,0,0,.12), 0 8px 16px rgba(0,0,0,.06);
+
+  /* Transiciones */
+  --transition-fast:   150ms cubic-bezier(.4,0,.2,1);
+  --transition-base:   250ms cubic-bezier(.4,0,.2,1);
+  --transition-slow:   400ms cubic-bezier(.4,0,.2,1);
+}
+
+/* =============================================
+   3. TIPOGRAFÍA
+   ============================================= */
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--navy-900);
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); letter-spacing: -.02em; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -.015em; }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); letter-spacing: -.01em; }
+h4 { font-size: 1.1rem; font-weight: 600; color: var(--navy-700); }
+h5 { font-size: .95rem; font-weight: 600; color: var(--navy-600); }
+
+p { color: var(--text-secondary); line-height: 1.75; }
+strong { font-weight: 600; color: var(--text-primary); }
+
+.text-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85em;
+  letter-spacing: .02em;
+}
+
+.text-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-600);
+}
+
+.text-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+}
+
+.text-xs   { font-size: .75rem; }
+.text-sm   { font-size: .875rem; }
+.text-base { font-size: 1rem; }
+.text-lg   { font-size: 1.125rem; }
+.text-xl   { font-size: 1.25rem; }
+
+/* =============================================
+   4. LAYOUT PRINCIPAL
+   ============================================= */
+.app-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  background: var(--navy-900);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--navy-700);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--navy-600) transparent;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  min-width: 0;
+}
+
+/* Secciones */
+.section {
+  padding: var(--space-20) var(--content-pad);
+  position: relative;
+}
+
+.section:nth-child(even) {
+  background: var(--gray-50);
+}
+
+.section-alt {
+  background: var(--bg-section-alt) !important;
+}
+
+.section-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+/* =============================================
+   5. BARRA DE PROGRESO SCROLL
+   ============================================= */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: 2px;
+  background: var(--border-color);
+  z-index: 200;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: var(--gold-500);
+  width: 0%;
+  transition: width 100ms linear;
+}
+
+/* =============================================
+   6. HEADER MÓVIL
+   ============================================= */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 150;
+  background: var(--navy-900);
+  height: 60px;
+  padding: 0 var(--space-5);
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--navy-700);
+}
+
+.mobile-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  color: var(--gold-400);
+  letter-spacing: .1em;
+}
+
+.mobile-menu-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 4px;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--white);
+  transition: var(--transition-base);
+}
+
+.mobile-menu-btn.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-btn.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* =============================================
+   7. UTILITIES
+   ============================================= */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.container { max-width: var(--content-max); margin: 0 auto; }
+.overflow-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.grid-2  { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+.grid-3  { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.grid-4  { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+
+.flex    { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start  { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.gap-4  { gap: var(--space-4); }
+.gap-6  { gap: var(--space-6); }
+.gap-8  { gap: var(--space-8); }
+
+.mt-4  { margin-top: var(--space-4); }
+.mt-6  { margin-top: var(--space-6); }
+.mt-8  { margin-top: var(--space-8); }
+.mt-12 { margin-top: var(--space-12); }
+.mb-4  { margin-bottom: var(--space-4); }
+.mb-6  { margin-bottom: var(--space-6); }
+.mb-8  { margin-bottom: var(--space-8); }
+
+/* =============================================
+   8. RESPONSIVE BREAKPOINTS
+   ============================================= */
+@media (max-width: 1199px) {
+  :root { --content-pad: 32px; --sidebar-width: 248px; }
+}
+
+@media (max-width: 767px) {
+  :root { --content-pad: 20px; }
+
+  .sidebar { transform: translateX(-100%); transition: transform var(--transition-base); }
+  .sidebar.open { transform: translateX(0); }
+
+  .main-content { margin-left: 0; padding-top: 60px; }
+
+  .mobile-header { display: flex; }
+  .scroll-progress { left: 0; top: 60px; }
+
+  .section { padding: var(--space-12) var(--content-pad); }
+
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.3rem; }
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
